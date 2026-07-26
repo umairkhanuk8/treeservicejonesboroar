@@ -262,7 +262,46 @@
         /* FAQ */
         .faq-container { margin-top: 40px; }
         .about-section-bg { background: #f7faf7; }
+
+        /* ===== ABOUT PAGE MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 110px 16px 56px !important;
+                min-height: 360px !important;
+                background-position: center top !important;
+            }
+            .about-hero-content { max-width: 100%; }
+            .about-hero h1 { font-size: clamp(24px, 7vw, 36px) !important; }
+            .about-hero p { font-size: 15px !important; }
+            .about-hero .btn-group { flex-direction: column; }
+            .about-hero .btn { width: 100% !important; }
+
+            .story-grid {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+            }
+            .values-grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+            .county-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .story-visual { padding: 32px 24px; }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero {
+                padding: 95px 14px 48px !important;
+                min-height: 320px !important;
+            }
+            .about-hero h1 { font-size: clamp(20px, 8vw, 28px) !important; }
+            .county-grid { grid-template-columns: 1fr !important; }
+            .story-visual { padding: 24px 18px; }
+        }
     </style>
+
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
 <body>
 

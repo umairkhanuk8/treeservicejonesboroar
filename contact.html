@@ -399,7 +399,51 @@
             line-height: 1.55;
             margin: 0;
         }
+
+        /* ===== CONTACT PAGE MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding: 110px 16px 56px !important;
+                min-height: 360px !important;
+                background-position: center top !important;
+            }
+            .contact-hero h1 { font-size: clamp(24px, 7vw, 36px) !important; }
+            .contact-hero p { font-size: 15px !important; }
+            .contact-hero .btn-group { flex-direction: column; }
+            .contact-hero .btn { width: 100% !important; }
+
+            /* Contact layout 2-col → 1-col */
+            .contact-layout,
+            div[style*="grid-template-columns:1fr 420px"],
+            div[style*="grid-template-columns: 1fr 420px"],
+            div[style*="grid-template-columns:2fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+            }
+
+            /* Contact form */
+            .contact-form-wrap { padding: 28px 20px; }
+
+            /* Contact info sidebar */
+            .contact-info-wrap { padding: 28px 20px; }
+
+            /* Contact services grid */
+            .contact-services-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-hero {
+                padding: 95px 14px 48px !important;
+                min-height: 320px !important;
+            }
+            .contact-hero h1 { font-size: clamp(20px, 8vw, 28px) !important; }
+            .contact-services-grid { grid-template-columns: 1fr !important; }
+            .contact-form-wrap { padding: 20px 16px; }
+        }
     </style>
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
 <body>
 

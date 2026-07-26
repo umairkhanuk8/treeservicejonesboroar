@@ -204,3 +204,56 @@
         position: static;
     }
 }
+
+@media (max-width: 768px) {
+    /* Service hero */
+    .service-hero {
+        min-height: 360px;
+        padding: 110px 16px 56px;
+        background-position: center top;
+    }
+    .service-hero h1 { font-size: clamp(22px, 6.5vw, 34px); }
+    .service-hero-text { font-size: 15px; margin-bottom: 20px; }
+    .service-hero .btn-group { flex-direction: column; }
+    .service-hero .btn { width: 100%; }
+
+    /* Layout */
+    .service-layout { padding: 56px 16px; }
+    .service-grid { gap: 32px; }
+
+    /* Main content */
+    .service-main h2 { font-size: clamp(20px, 5vw, 28px); margin-bottom: 14px; }
+    .service-main p { font-size: 15px; }
+    .service-main h3 { font-size: clamp(17px, 4vw, 22px); }
+
+    /* Feature box */
+    .service-feature-box { padding: 18px 20px; }
+
+    /* Checklist */
+    .service-checklist li { font-size: 15px; }
+
+    /* Sidebar widgets */
+    .service-sidebar { gap: 20px; }
+    .widget { padding: 24px 18px; }
+    .widget h3 { font-size: 17px; }
+    .widget-cta { padding: 24px 18px; }
+    .widget-cta h3 { font-size: 17px; }
+    .widget-cta p { font-size: 13px; }
+    .widget-menu a { font-size: 14px; padding: 10px 0; }
+
+    /* Service breadcrumb */
+    .service-breadcrumb { font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+    .service-hero {
+        min-height: 320px;
+        padding: 95px 14px 48px;
+    }
+    .service-hero h1 { font-size: clamp(18px, 7vw, 26px); }
+    .service-hero-text { font-size: 14px; }
+    .service-layout { padding: 48px 14px; }
+    .widget { padding: 20px 14px; }
+    .widget-cta { padding: 20px 14px; }
+}
+
