@@ -3,15 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>About Us | {{COMPANY_NAME}} - {{SERVICE_TYPE}} Experts in {{CITY_NAME}}</title>
-    <meta name="description" content="Learn more about {{COMPANY_NAME}}, the top rated {{SERVICE_TYPE}} company in {{CITY_NAME}}. Discover our mission, history, and commitment to quality.">
-    <link rel="canonical" href="https://{{DOMAIN_URL}}/about.html">
 
-    <!-- Fonts & CSS -->
+    <!-- Primary SEO Meta -->
+    <title>About Us | Tree Service Jonesboro AR — Local Tree Care Professionals</title>
+    <meta name="description" content="Learn about the local tree care professionals behind Tree Service Jonesboro AR. Serving Craighead County and Northeast Arkansas with honest estimates, on-site assessments, and complete tree care since day one.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://treeservicejonesboroar.com/about.html">
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="US-AR">
+    <meta name="geo.placename" content="Jonesboro, Arkansas">
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Us | Tree Service Jonesboro AR — Local Tree Care Professionals">
+    <meta property="og:description" content="The local tree care professionals behind Tree Service Jonesboro AR. On-site assessments, written estimates, and complete residential and commercial tree care across Northeast Arkansas.">
+    <meta property="og:url" content="https://treeservicejonesboroar.com/about.html">
+
+    <!-- Schema.org: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Tree Service Jonesboro AR",
+      "url": "https://treeservicejonesboroar.com",
+      "telephone": "(870) 555-0190",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jonesboro",
+        "addressRegion": "AR",
+        "postalCode": "72401",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.8423,
+        "longitude": -90.7043
+      },
+      "areaServed": [
+        "Jonesboro", "Craighead County", "Brookland", "Bono", "Bay", "Lake City",
+        "Monette", "Paragould", "Trumann", "Harrisburg", "Walnut Ridge",
+        "Pocahontas", "Manila", "Leachville", "Northeast Arkansas"
+      ],
+      "openingHours": "Mo-Sa 07:00-19:00",
+      "description": "Professional tree removal, trimming, pruning, stump grinding, emergency response, and land clearing for residential, commercial, and rural properties across Northeast Arkansas.",
+      "knowsAbout": ["Tree Removal", "Tree Trimming", "Tree Pruning", "Stump Grinding", "Emergency Tree Service", "Storm Damage Cleanup", "Land Clearing", "Commercial Tree Service"]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is Tree Service Jonesboro AR based?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are based in Jonesboro, Arkansas, and serve residential, commercial, and rural properties throughout Craighead County and surrounding counties in Northeast Arkansas — including Greene, Poinsett, Lawrence, Randolph, and Mississippi counties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide free estimates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We provide free, written estimates after an on-site assessment of your property. We do not price jobs over the phone because tree condition, site access, and surrounding infrastructure all affect the scope and price of work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you licensed and insured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We carry general liability insurance on all tree care work. Before any job begins, we assess the worksite for hazards and follow established safety protocols to protect property and personnel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your service area?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We serve communities throughout Northeast Arkansas including Jonesboro, Brookland, Bono, Bay, Lake City, Monette, Paragould, Trumann, Harrisburg, Walnut Ridge, Pocahontas, Manila, and Leachville — covering Craighead, Greene, Poinsett, Lawrence, Randolph, and Mississippi counties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work on rural and agricultural properties?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Rural acreage, farm properties, and agricultural land are a significant part of our workload. We assess access conditions, ground conditions, and surrounding farm infrastructure on every rural property before providing any estimate."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Righteous&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/service-page.css">
+
+    <style>
+        /* About-page specific styles */
+        .about-hero {
+            background: linear-gradient(135deg, var(--color-dark, #0d1f0e) 0%, #1a3d1c 60%, #0d2e10 100%);
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(163,204,60,0.08) 0%, transparent 70%);
+        }
+        .about-hero-content { position: relative; z-index: 1; max-width: 780px; }
+        .about-hero h1 { font-size: clamp(2rem, 4vw, 3rem); color: #fff; margin-bottom: 20px; line-height: 1.2; }
+        .about-hero h1 span { color: var(--color-gold, #d4af37); }
+        .about-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.82); line-height: 1.75; max-width: 640px; }
+        .about-breadcrumb { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
+        .about-breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
+        .about-breadcrumb a:hover { color: var(--color-gold, #d4af37); }
+
+        /* Two-col story layout */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        @media (max-width: 800px) {
+            .story-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+        .story-visual {
+            background: linear-gradient(135deg, #1a3d1c 0%, #2d5a2f 100%);
+            border-radius: 16px;
+            padding: 48px 40px;
+            color: #fff;
+        }
+        .story-stat {
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            padding: 18px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .story-stat:last-child { border-bottom: none; }
+        .story-stat-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-gold, #d4af37);
+            font-family: 'Righteous', sans-serif;
+        }
+        .story-stat-label { font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+
+        /* Values grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .value-card {
+            background: #fff;
+            border: 1px solid #e8ede8;
+            border-radius: 14px;
+            padding: 36px 30px;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .value-card:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+        .value-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #1a3d1c 0%, #2d5a2f 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .value-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #1a1a1a; }
+        .value-card p { font-size: 0.93rem; color: #555; line-height: 1.65; margin: 0; }
+
+        /* Process steps */
+        .process-steps {
+            counter-reset: step-counter;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .process-step {
+            counter-increment: step-counter;
+            background: #fff;
+            border-radius: 14px;
+            padding: 32px 26px;
+            position: relative;
+            border: 1px solid #e8ede8;
+        }
+        .process-step::before {
+            content: counter(step-counter);
+            position: absolute;
+            top: -14px;
+            left: 26px;
+            background: var(--color-gold, #d4af37);
+            color: #000;
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-family: 'Figtree', sans-serif;
+        }
+        .process-step h3 { font-size: 1rem; margin: 8px 0 10px; }
+        .process-step p { font-size: 0.9rem; color: #555; line-height: 1.6; margin: 0; }
+
+        /* Service area counties */
+        .county-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 36px;
+        }
+        .county-card {
+            background: #fff;
+            border: 1px solid #e4e9e4;
+            border-radius: 10px;
+            padding: 20px 20px 16px;
+        }
+        .county-card strong { display: block; font-size: 0.95rem; color: #1a3d1c; margin-bottom: 6px; }
+        .county-card span { font-size: 0.83rem; color: #666; }
+
+        /* FAQ */
+        .faq-container { margin-top: 40px; }
+        .about-section-bg { background: #f7faf7; }
+    </style>
 </head>
 <body>
 
@@ -19,29 +256,47 @@
     <header class="site-header" id="site-header">
         <div class="container">
             <div class="header-inner">
-                <a href="index.html" class="logo" aria-label="Home">
-                    <div class="logo-icon">★</div>
-                    <span>{{COMPANY_NAME}}</span>
+                <a href="index.html" class="logo" aria-label="Tree Service Jonesboro AR - Home">
+                    <div class="logo-icon">🌳</div>
+                    <span>Tree Service Jonesboro</span>
                 </a>
-                <nav class="nav-links">
+                <nav class="nav-links" aria-label="Main Navigation">
                     <a href="index.html">Home</a>
                     <div class="dropdown">
                         <a href="services.html" class="dropbtn">Services ▾</a>
                         <div class="dropdown-content">
-                            <a href="service-detail.html">Service Page 1</a>
-                            <a href="service-detail.html">Service Page 2</a>
+                            <a href="tree-removal-jonesboro-ar.html">Tree Removal</a>
+                            <a href="tree-trimming-jonesboro-ar.html">Tree Trimming</a>
+                            <a href="tree-pruning-jonesboro-ar.html">Tree Pruning</a>
+                            <a href="stump-grinding-jonesboro-ar.html">Stump Grinding</a>
+                            <a href="emergency-tree-service-jonesboro-ar.html">Emergency Tree Service</a>
+                            <a href="storm-damage-tree-cleanup-jonesboro-ar.html">Storm Damage Cleanup</a>
+                            <a href="land-clearing-jonesboro-ar.html">Land Clearing</a>
+                            <a href="commercial-tree-service-jonesboro-ar.html">Commercial Tree Service</a>
                         </div>
                     </div>
                     <a href="about.html" style="color:var(--color-gold);">About</a>
                     <div class="dropdown">
                         <a href="service-area.html" class="dropbtn">Areas ▾</a>
                         <div class="dropdown-content dropdown-grid">
-                            <a href="area-detail.html">Location City 1</a>
+                            <a href="tree-service-brookland-ar.html">Brookland, AR</a>
+                            <a href="tree-service-bono-ar.html">Bono, AR</a>
+                            <a href="tree-service-bay-ar.html">Bay, AR</a>
+                            <a href="tree-service-lake-city-ar.html">Lake City, AR</a>
+                            <a href="tree-service-monette-ar.html">Monette, AR</a>
+                            <a href="tree-service-paragould-ar.html">Paragould, AR</a>
+                            <a href="tree-service-trumann-ar.html">Trumann, AR</a>
+                            <a href="tree-service-harrisburg-ar.html">Harrisburg, AR</a>
+                            <a href="tree-service-walnut-ridge-ar.html">Walnut Ridge, AR</a>
+                            <a href="tree-service-pocahontas-ar.html">Pocahontas, AR</a>
+                            <a href="tree-service-manila-ar.html">Manila, AR</a>
+                            <a href="tree-service-leachville-ar.html">Leachville, AR</a>
+                            <a href="service-area.html">View All Areas →</a>
                         </div>
                     </div>
                     <a href="contact.html">Contact</a>
                 </nav>
-                <a href="tel:{{PHONE_NUMBER_RAW}}" class="nav-cta">Call {{PHONE_NUMBER}}</a>
+                <a href="tel:8705550190" class="nav-cta">Call (870) 555-0190</a>
                 <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -49,91 +304,284 @@
         </div>
     </header>
 
-    <!-- ===== MOBILE MENU DRAWER ===== -->
+    <!-- ===== MOBILE MENU ===== -->
     <div class="mobile-menu" id="mobile-menu">
         <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="about.html">About</a>
+        <a href="about.html" style="color:var(--color-gold);">About</a>
         <a href="service-area.html">Areas</a>
         <a href="contact.html">Contact</a>
+        <a href="tel:8705550190" class="btn btn-gold" style="width:100%;margin-top:20px;">Call (870) 555-0190</a>
     </div>
 
-    <!-- ===== PAGE HERO ===== -->
-    <section class="hero" style="min-height:420px; padding:160px 20px 70px;">
-        <div class="hero-overlay"></div>
+    <!-- ===== HERO ===== -->
+    <section class="about-hero">
         <div class="container">
-            <div class="hero-content reveal">
-                <span class="section-label section-label--light">Who We Are</span>
-                <h1>About <span>{{COMPANY_NAME}}</span></h1>
-                <p class="hero-text">Dedicated to delivering exceptional {{SERVICE_TYPE}} craftsmanship with safety, integrity, and unmatched customer care in {{CITY_NAME}}.</p>
+            <div class="about-hero-content reveal">
+                <div class="about-breadcrumb">
+                    <a href="index.html">Home</a> &gt; <span>About Us</span>
+                </div>
+                <h1>About <span>Tree Service Jonesboro AR</span></h1>
+                <p>We are a Jonesboro-based tree care team serving residential homeowners, commercial property managers, landlords, and agricultural property owners across Northeast Arkansas. Every job starts with an on-site assessment and a written estimate — no phone quotes, no surprises.</p>
+                <div class="btn-group" style="margin-top:32px;">
+                    <a href="tel:8705550190" class="btn btn-primary" id="about-hero-call">Call (870) 555-0190</a>
+                    <a href="contact.html" class="btn btn-outline" id="about-hero-contact">Request an Estimate</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== OUR STORY SECTION ===== -->
+    <!-- ===== WHO WE ARE ===== -->
     <section class="section-padding" style="background:#fff;">
         <div class="container">
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+            <div class="story-grid">
                 <div class="reveal-left">
-                    <span class="section-label">Our Story</span>
-                    <h2>Building Trust Through Quality Work</h2>
-                    <p>
-                        Founded with a mission to elevate standard service expectations, {{COMPANY_NAME}} has grown into a trusted leader across {{CITY_NAME}}.
-                    </p>
-                    <p>
-                        We invest heavily in state-of-the-art equipment, continuous safety training, and transparent communication so every client feels completely confident in our work.
-                    </p>
+                    <span class="section-label">Who We Are</span>
+                    <h2>Local Tree Care Professionals Serving Northeast Arkansas</h2>
+                    <p>Tree Service Jonesboro AR is a locally operated tree care company based in Craighead County. We specialize in residential and commercial tree removal, trimming, pruning, stump grinding, storm-damage cleanup, emergency response, and land clearing — serving properties throughout the Northeast Arkansas region from the Jonesboro metro to rural communities across six surrounding counties.</p>
+                    <p>We operate on a straightforward principle: visit the property, assess the actual conditions, explain clearly what we find, and provide a written estimate before any work is scheduled. We don't price jobs over the phone because tree condition, site access, surrounding infrastructure, and debris logistics all affect what a job actually involves — and those factors can only be evaluated on-site.</p>
+                    <p>Our team works with homeowners on established residential lots, landlords managing rental properties, commercial property managers with clearance and maintenance needs, and agricultural property owners with rural acreage clearing and removal requirements. The approach is the same regardless of property type: assess first, communicate clearly, work safely, and leave the site in appropriate condition when the job is done.</p>
                 </div>
-                <div class="reveal-right" style="background:var(--color-light-gray); height:360px; border-radius:var(--radius); display:flex; align-items:center; justify-content:center; border:1px solid var(--color-border);">
-                    <div style="text-align:center; color:var(--color-muted);">
-                        <p style="font-size:48px; margin:0;">🏢</p>
-                        <p>Company Overview Image</p>
+                <div class="reveal-right">
+                    <div class="story-visual">
+                        <div style="font-size:2rem; margin-bottom:24px;">🌳</div>
+                        <h3 style="color:#fff; font-size:1.3rem; margin-bottom:24px;">Our Service Area at a Glance</h3>
+                        <div class="story-stat">
+                            <span class="story-stat-label">Counties Served</span>
+                            <span class="story-stat-num">6+</span>
+                        </div>
+                        <div class="story-stat">
+                            <span class="story-stat-label">Cities &amp; Communities</span>
+                            <span class="story-stat-num">12+</span>
+                        </div>
+                        <div class="story-stat">
+                            <span class="story-stat-label">Services Offered</span>
+                            <span class="story-stat-num">8</span>
+                        </div>
+                        <div class="story-stat">
+                            <span class="story-stat-label">Written Estimates Provided</span>
+                            <span class="story-stat-num">100%</span>
+                        </div>
+                        <div class="story-stat">
+                            <span class="story-stat-label">Phone Quotes Given</span>
+                            <span class="story-stat-num">0</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CORE VALUES ===== -->
-    <section class="section-padding" style="background:var(--color-light-gray);">
+    <!-- ===== WHAT MAKES US DIFFERENT ===== -->
+    <section class="section-padding about-section-bg">
         <div class="container">
             <div class="text-center reveal">
-                <span class="section-label">Our Principles</span>
-                <h2>What Drives Us Forward</h2>
-                <p class="section-intro">Core values that guide every estimate, interaction, and project completion.</p>
+                <span class="section-label">Our Approach</span>
+                <h2>What Separates Our Tree Care from the Rest</h2>
+                <p class="section-intro">Tree work varies significantly by property, tree condition, access, and surrounding infrastructure. We account for all of that — not just the tree size.</p>
             </div>
-
-            <div class="features-grid">
-                <div class="card reveal">
-                    <div class="card-icon">🎯</div>
-                    <h3>Safety First</h3>
-                    <p>Rigorous adherence to local regulations and professional safety protocols on every job site.</p>
+            <div class="values-grid">
+                <div class="value-card reveal">
+                    <div class="value-icon">📋</div>
+                    <h3>On-Site Assessment First</h3>
+                    <p>Every estimate begins with a property visit. We evaluate the tree's structure, visible defects, root zone, canopy balance, access routes, and surrounding site conditions before putting numbers on paper. Phone estimates for tree work are rarely accurate — site conditions matter too much.</p>
                 </div>
-
-                <div class="card reveal">
-                    <div class="card-icon">💎</div>
-                    <h3>Uncompromising Quality</h3>
-                    <p>Using premium tools and proven techniques to ensure pristine, durable outcomes.</p>
+                <div class="value-card reveal">
+                    <div class="value-icon">📝</div>
+                    <h3>Written, Site-Specific Estimates</h3>
+                    <p>We provide estimates in writing after the site visit so you know exactly what work is included, how debris will be handled, and what the job scope covers before any crew arrives. No vague verbal quotes, no scope creep on the day of the job.</p>
                 </div>
-
-                <div class="card reveal">
-                    <div class="card-icon">🤝</div>
-                    <h3>Honest Pricing</h3>
-                    <p>Clear upfront quotes with no hidden fees or unexpected charges after project start.</p>
+                <div class="value-card reveal">
+                    <div class="value-icon">✅</div>
+                    <h3>Honest Recommendations</h3>
+                    <p>We don't recommend removal when pruning is the appropriate response, and we don't inflate the scope to increase billing. When a tree can be safely managed through targeted trimming or deadwood removal, we say so. When removal is genuinely the right call, we explain why based on what we actually found.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">🌿</div>
+                    <h3>Proper Pruning Practices</h3>
+                    <p>We make pruning cuts at the branch collar, not stubs, and we don't perform topping — a practice that creates large wounds, accelerates decay, and produces structurally weak regrowth regardless of species. Proper cuts allow the tree to close wounds over time and maintain structural integrity.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">🛡️</div>
+                    <h3>Safe, Planned Work Sequences</h3>
+                    <p>Before any cutting begins, work zones are established, rigging is planned for restricted fall zones, and the crew knows the sequence. We don't work near energized utility lines, and storm-damage jobs are approached with extra caution because suspended loads and tension in damaged wood create unpredictable forces.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">🏡</div>
+                    <h3>Full Site Cleanup Included</h3>
+                    <p>Brush is chipped and removed. Log sections are handled per your preference. The site is raked clean and reviewed before we leave. Stump grinding is done at the agreed depth when included in scope. The area is left in a condition appropriate for its intended use.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CTA BANNER ===== -->
+    <!-- ===== OUR PROCESS ===== -->
+    <section class="section-padding" style="background:#fff;">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">How We Work</span>
+                <h2>Our Tree Care Process, Step by Step</h2>
+                <p class="section-intro">From your first call to final site cleanup — here is exactly what working with our team looks like.</p>
+            </div>
+            <div class="process-steps reveal">
+                <div class="process-step">
+                    <h3>You Contact Us</h3>
+                    <p>Call or submit an online request. Describe the general situation — we'll ask a few questions to understand the property type and the nature of the tree concern so we can schedule the site visit efficiently.</p>
+                </div>
+                <div class="process-step">
+                    <h3>On-Site Assessment</h3>
+                    <p>We visit the property and evaluate the tree's structural condition, canopy balance, root zone, visible defects, and surrounding site. Access routes, nearby structures, utility proximity, and equipment positioning are all factored in.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Written Estimate</h3>
+                    <p>Based on what we found, we prepare a written estimate covering the work scope, removal or pruning method, debris handling plan, and stump grinding if applicable. You review and approve before any work is scheduled.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Scheduled Work Day</h3>
+                    <p>The crew arrives with the appropriate equipment for the site conditions. Work zones are established, rigging is set up where needed, and the job proceeds in a planned sequence that protects surrounding structures, landscaping, and infrastructure.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Cleanup &amp; Final Review</h3>
+                    <p>All brush is chipped and removed. Log sections are handled per your preference. The site is raked and reviewed against the estimate scope. You walk the property with us before we leave to confirm everything was completed as agreed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES OVERVIEW ===== -->
+    <section class="section-padding about-section-bg">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">What We Do</span>
+                <h2>Tree Care Services We Provide</h2>
+                <p class="section-intro">Complete residential and commercial tree care for properties of all sizes throughout Northeast Arkansas.</p>
+            </div>
+            <div class="features-grid" style="margin-top:44px;">
+                <div class="card reveal">
+                    <div class="card-icon">🪓</div>
+                    <h3>Tree Removal</h3>
+                    <p>Controlled removal of dead, hazardous, or unwanted trees using directional felling or rigged sectional dismantling, depending on site conditions. Full debris removal included.</p>
+                    <a href="tree-removal-jonesboro-ar.html" style="font-size:0.88rem; color:var(--color-primary-accent, #5a9e3a); font-weight:600; text-decoration:none;">Learn More →</a>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">✂️</div>
+                    <h3>Tree Trimming</h3>
+                    <p>Targeted clearance trimming for branches over rooftops, driveways, utilities, and structures. We remove what needs to go without over-pruning the remaining tree structure.</p>
+                    <a href="tree-trimming-jonesboro-ar.html" style="font-size:0.88rem; color:var(--color-primary-accent, #5a9e3a); font-weight:600; text-decoration:none;">Learn More →</a>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">🌿</div>
+                    <h3>Tree Pruning</h3>
+                    <p>Structural and crown-cleaning pruning to remove deadwood, correct weak branch unions, and improve canopy balance. Proper cuts at the branch collar throughout.</p>
+                    <a href="tree-pruning-jonesboro-ar.html" style="font-size:0.88rem; color:var(--color-primary-accent, #5a9e3a); font-weight:600; text-decoration:none;">Learn More →</a>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">⚡</div>
+                    <h3>Emergency Tree Service</h3>
+                    <p>Storm-damaged and hazardous tree response for Jonesboro and surrounding Northeast Arkansas. We assess before cutting — especially when a tree is under load against a structure.</p>
+                    <a href="emergency-tree-service-jonesboro-ar.html" style="font-size:0.88rem; color:var(--color-primary-accent, #5a9e3a); font-weight:600; text-decoration:none;">Learn More →</a>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">🔄</div>
+                    <h3>Stump Grinding</h3>
+                    <p>Grinding stumps to below-grade level for mowing clearance, construction preparation, or landscaping. Surface root grinding available when the root extent warrants it.</p>
+                    <a href="stump-grinding-jonesboro-ar.html" style="font-size:0.88rem; color:var(--color-primary-accent, #5a9e3a); font-weight:600; text-decoration:none;">Learn More →</a>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">🏗️</div>
+                    <h3>Land &amp; Lot Clearing</h3>
+                    <p>Fence-line clearing, agricultural border clearing, and lot preparation for construction — covering trees, brush, and stump grinding as a coordinated scope.</p>
+                    <a href="land-clearing-jonesboro-ar.html" style="font-size:0.88rem; color:var(--color-primary-accent, #5a9e3a); font-weight:600; text-decoration:none;">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICE AREA ===== -->
+    <section class="section-padding" style="background:#fff;">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">Where We Serve</span>
+                <h2>Our Northeast Arkansas Service Area</h2>
+                <p class="section-intro">We serve residential, commercial, and rural properties across six counties and more than a dozen communities in Northeast Arkansas.</p>
+            </div>
+            <div class="county-grid reveal">
+                <div class="county-card">
+                    <strong>Craighead County</strong>
+                    <span>Jonesboro, Brookland, Bono, Bay, Lake City, Monette</span>
+                </div>
+                <div class="county-card">
+                    <strong>Greene County</strong>
+                    <span>Paragould and surrounding Greene County communities</span>
+                </div>
+                <div class="county-card">
+                    <strong>Poinsett County</strong>
+                    <span>Trumann, Harrisburg and rural Poinsett County properties</span>
+                </div>
+                <div class="county-card">
+                    <strong>Lawrence County</strong>
+                    <span>Walnut Ridge and surrounding Lawrence County communities</span>
+                </div>
+                <div class="county-card">
+                    <strong>Randolph County</strong>
+                    <span>Pocahontas and rural Randolph County acreage</span>
+                </div>
+                <div class="county-card">
+                    <strong>Mississippi County</strong>
+                    <span>Manila, Leachville and Delta agricultural properties</span>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:36px;">
+                <a href="service-area.html" class="btn btn-primary" id="about-areas-btn">View All Service Areas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section-padding about-section-bg">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">Common Questions</span>
+                <h2>Frequently Asked Questions About Our Company</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" id="faq-about-1"><span>Where is Tree Service Jonesboro AR based?</span><div class="faq-icon">▼</div></div>
+                    <div class="faq-answer"><p>We are based in Jonesboro, Arkansas, and serve residential, commercial, and rural properties throughout Craighead County and surrounding counties in Northeast Arkansas — including Greene, Poinsett, Lawrence, Randolph, and Mississippi counties. Our coverage area extends from communities near Jonesboro outward to Paragould, Trumann, Harrisburg, Walnut Ridge, Pocahontas, Manila, and Leachville.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" id="faq-about-2"><span>Do you provide free estimates?</span><div class="faq-icon">▼</div></div>
+                    <div class="faq-answer"><p>Yes. We provide free written estimates after an on-site assessment of your property. We do not price jobs over the phone because tree condition, site access, and surrounding infrastructure all affect the scope and price of the work — and those factors can only be evaluated accurately in person. The estimate is provided in writing before any work is scheduled.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" id="faq-about-3"><span>Are you licensed and insured?</span><div class="faq-icon">▼</div></div>
+                    <div class="faq-answer"><p>Yes. We carry general liability insurance on all tree care work. Before any job begins, we assess the worksite for hazards, establish work-zone boundaries, and follow established safety protocols to protect both property and personnel. Proof of insurance is available upon request before work is scheduled.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" id="faq-about-4"><span>Do you work on rural and agricultural properties?</span><div class="faq-icon">▼</div></div>
+                    <div class="faq-answer"><p>Yes. Rural acreage, farm properties, fence-line clearing, agricultural border clearing, and properties with soft-ground or long-distance access conditions are a significant part of our workload across Northeast Arkansas. We assess access conditions, ground conditions, and surrounding farm infrastructure on every rural property before providing any estimate — rural property situations require different planning than suburban residential jobs.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" id="faq-about-5"><span>Do you handle emergency and storm-damage tree work?</span><div class="faq-icon">▼</div></div>
+                    <div class="faq-answer"><p>Yes. We respond to storm-damaged and hazardous tree situations throughout our Northeast Arkansas service area. Storm-damage response begins with an on-site assessment before any cutting begins — this is especially important when a tree is under load against a structure or when damaged wood is under tension, as unplanned cutting can cause unpredictable and dangerous movement. If overhead utility lines are involved, contact your utility provider before approaching the area.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" id="faq-about-6"><span>Do you perform tree topping?</span><div class="faq-icon">▼</div></div>
+                    <div class="faq-answer"><p>No. We do not perform topping — a practice that involves cutting main stems and large branches back to stubs without regard for proper pruning cuts. Topping creates large, exposed wounds that are slow to close, accelerates decay in the trunk and remaining branches, and produces structurally weak, fast-growing regrowth that tends to fail more readily than the original branch structure. When a tree's height or canopy spread is a concern, selective crown reduction using proper pruning cuts is the appropriate approach — and even then, it has limits that we discuss during the assessment.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
     <div class="container">
         <section class="cta-banner reveal">
-            <h2>Work with {{CITY_NAME}}'s Trusted Experts</h2>
-            <p>Connect with our team to experience seamless project management from start to finish.</p>
+            <h2>Ready to Schedule an Assessment?</h2>
+            <p>Our team serves residential, commercial, and rural properties across Northeast Arkansas. Call to schedule an on-site evaluation or submit a request online — written estimates provided before any work begins.</p>
             <div class="btn-group" style="justify-content:center;">
-                <a href="tel:{{PHONE_NUMBER_RAW}}" class="btn btn-gold">Call {{PHONE_NUMBER}}</a>
-                <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                <a href="tel:8705550190" class="btn btn-gold" id="about-cta-call">Call (870) 555-0190</a>
+                <a href="contact.html" class="btn btn-outline" id="about-cta-contact">Request an Estimate</a>
             </div>
         </section>
     </div>
@@ -142,8 +590,13 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> {{COMPANY_NAME}}. All Rights Reserved.</p>
-                <p><a href="index.html" style="color:var(--color-gold);">Back to Home</a></p>
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Tree Service Jonesboro AR. All Rights Reserved.</p>
+                <p>
+                    <a href="index.html" style="color:var(--color-gold);">Home</a> &nbsp;|&nbsp;
+                    <a href="services.html" style="color:var(--color-gold);">Services</a> &nbsp;|&nbsp;
+                    <a href="service-area.html" style="color:var(--color-gold);">Service Areas</a> &nbsp;|&nbsp;
+                    <a href="contact.html" style="color:var(--color-gold);">Contact</a>
+                </p>
             </div>
         </div>
     </footer>
