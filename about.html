@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -114,7 +114,10 @@
     <style>
         /* About-page specific styles */
         .about-hero {
-            background: linear-gradient(135deg, var(--color-dark, #0d1f0e) 0%, #1a3d1c 60%, #0d2e10 100%);
+            background-image: url('images/hero-about-jonesboro-ar.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-color: #0d1f0e;
             padding: 140px 0 80px;
             position: relative;
             overflow: hidden;
@@ -123,7 +126,14 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 70% 50%, rgba(163,204,60,0.08) 0%, transparent 70%);
+            background: linear-gradient(
+                180deg,
+                rgba(10, 30, 18, 0.20) 0%,
+                rgba(10, 30, 18, 0.60) 35%,
+                rgba(10, 30, 18, 0.90) 65%,
+                rgba(10, 30, 18, 0.98) 100%
+            );
+            z-index: 0;
         }
         .about-hero-content { position: relative; z-index: 1; max-width: 780px; }
         .about-hero h1 { font-size: clamp(2rem, 4vw, 3rem); color: #fff; margin-bottom: 20px; line-height: 1.2; }

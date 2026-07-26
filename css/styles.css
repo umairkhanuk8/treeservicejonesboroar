@@ -490,6 +490,75 @@ main section[id] {
 }
 
 /* ===== HERO SECTION ===== */
+/* ===== SERVICE PAGE HERO (inner pages) ===== */
+.service-hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary-deep);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 160px 20px 90px;
+    overflow: hidden;
+}
+
+.service-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(10, 30, 18, 0.25)  0%,
+        rgba(10, 30, 18, 0.55) 30%,
+        rgba(10, 30, 18, 0.85) 60%,
+        rgba(10, 30, 18, 0.97) 100%
+    );
+    pointer-events: none;
+}
+
+.service-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 860px;
+}
+
+.service-hero h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.service-hero h1 span {
+    color: var(--color-gold);
+}
+
+.service-hero-text {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.75;
+    max-width: 640px;
+    margin-bottom: 32px;
+}
+
+.service-breadcrumb {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 20px;
+}
+
+.service-breadcrumb a {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+}
+
+.service-breadcrumb a:hover {
+    color: var(--color-gold);
+}
+
+/* ===== MAIN HERO (homepage) ===== */
 .hero {
     position: relative;
     min-height: 100vh;

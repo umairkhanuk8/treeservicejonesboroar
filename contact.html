@@ -86,8 +86,10 @@
     <style>
         /* Contact page hero */
         .contact-hero {
-            background: linear-gradient(135deg, #0d1f0e 0%, #1a3c2a 60%, #0d2e10 100%);
-            padding: 140px 0 80px;
+            background-image: url('images/hero-contact-jonesboro-ar.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-color: #0d1f0e;
             position: relative;
             overflow: hidden;
         }
@@ -95,7 +97,14 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 65% 40%, rgba(197,165,90,0.07) 0%, transparent 70%);
+            background: linear-gradient(
+                180deg,
+                rgba(10, 30, 18, 0.20) 0%,
+                rgba(10, 30, 18, 0.60) 35%,
+                rgba(10, 30, 18, 0.90) 65%,
+                rgba(10, 30, 18, 0.98) 100%
+            );
+            z-index: 0;
         }
         .contact-hero-content {
             position: relative;
