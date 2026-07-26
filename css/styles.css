@@ -694,6 +694,30 @@ main section[id] {
     margin: 0;
 }
 
+/* ===== ALL DARK SECTIONS — WHITE HEADINGS ===== */
+/* Applies to: specialty, equipment, case-studies, areas sections */
+.specialty-section,
+.equipment-section,
+.case-section,
+.areas-section {
+    background: var(--color-primary-deep);
+}
+
+.specialty-section h2,
+.equipment-section h2,
+.case-section h2,
+.areas-section h2 {
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.specialty-section .section-intro,
+.equipment-section .section-intro,
+.case-section .section-intro,
+.areas-section .section-intro {
+    color: rgba(255, 255, 255, 0.82) !important;
+}
+
 /* ===== PROCESS SECTION ===== */
 .process-section {
     background: var(--color-light-gray);
