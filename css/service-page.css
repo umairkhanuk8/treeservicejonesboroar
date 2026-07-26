@@ -1,0 +1,206 @@
+/* ==========================================================================
+   SERVICE & SUB-SERVICE PAGE SPECIFIC STYLES
+   Extends styles.css with dedicated sub-service detail layouts
+   ========================================================================== */
+
+/* ===== SERVICE HERO ===== */
+.service-hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    background: var(--color-primary-deep) linear-gradient(170deg, rgba(10, 35, 20, 0.94) 0%, rgba(26, 60, 42, 0.88) 100%);
+    background-size: cover;
+    background-position: center;
+    padding: 160px 20px 80px;
+    overflow: hidden;
+}
+
+.service-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.service-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Figtree', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+.service-breadcrumb a {
+    color: var(--color-gold);
+    transition: color 0.3s ease;
+}
+
+.service-breadcrumb a:hover {
+    color: #fff;
+}
+
+.service-hero h1 {
+    color: #fff;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.service-hero h1 span {
+    color: var(--color-gold);
+}
+
+.service-hero-text {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 640px;
+    margin-bottom: 32px;
+}
+
+/* ===== SERVICE CONTENT & SIDEBAR LAYOUT ===== */
+.service-layout {
+    padding: 90px 20px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.service-main h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.service-main p {
+    color: #555;
+    font-size: 16.5px;
+    line-height: 1.9;
+    margin-bottom: 24px;
+}
+
+.service-feature-box {
+    background: var(--color-light-gray);
+    border-left: 4px solid var(--color-primary-accent);
+    padding: 24px 28px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 30px 0;
+}
+
+.service-feature-box h4 {
+    color: var(--color-primary-deep);
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.service-checklist {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.service-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: var(--color-dark);
+    margin-bottom: 14px;
+    font-weight: 500;
+}
+
+.service-checklist li::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--color-primary-accent);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* ===== SIDEBAR WIDGETS ===== */
+.service-sidebar {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.widget {
+    background: var(--color-light-gray);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    border: 1px solid var(--color-border);
+}
+
+.widget h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--color-primary-deep);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 12px;
+}
+
+.widget-menu li {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.widget-menu li:last-child {
+    border-bottom: none;
+}
+
+.widget-menu a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-weight: 600;
+    color: var(--color-dark);
+    transition: color 0.3s ease;
+}
+
+.widget-menu a:hover,
+.widget-menu a.active {
+    color: var(--color-primary-accent);
+}
+
+.widget-cta {
+    background: linear-gradient(135deg, var(--color-primary-deep), var(--color-primary-accent));
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    text-align: center;
+}
+
+.widget-cta h3 {
+    color: #fff;
+    border: none;
+    padding: 0;
+    margin-bottom: 12px;
+}
+
+.widget-cta p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14.5px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-sidebar {
+        position: static;
+    }
+}

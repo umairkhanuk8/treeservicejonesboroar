@@ -1,0 +1,140 @@
+/* ==========================================================================
+   AREA & SUB-AREA PAGE SPECIFIC STYLES
+   Dedicated styling for location/city specific pages
+   ========================================================================== */
+
+/* ===== AREA HERO ===== */
+.area-hero {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background: var(--color-primary-deep) linear-gradient(135deg, rgba(8, 30, 18, 0.95) 0%, rgba(20, 55, 35, 0.88) 100%);
+    background-size: cover;
+    background-position: center;
+    padding: 160px 20px 90px;
+    overflow: hidden;
+}
+
+.area-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+}
+
+.area-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+.area-breadcrumb a {
+    color: var(--color-gold);
+}
+
+.area-hero h1 {
+    color: #fff;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.area-hero h1 span {
+    color: var(--color-gold);
+    display: block;
+    font-size: 0.7em;
+    margin-top: 6px;
+}
+
+.area-hero-text {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 18px;
+    line-height: 1.85;
+    max-width: 640px;
+    margin-bottom: 32px;
+}
+
+/* ===== LOCATION DETAILS SECTION ===== */
+.area-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.area-about-img {
+    width: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-hover);
+    height: 400px;
+    background: var(--color-light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.area-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.area-fact-card {
+    background: var(--color-light-gray);
+    padding: 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+}
+
+.area-fact-card h4 {
+    font-size: 15px;
+    color: var(--color-primary-accent);
+    margin-bottom: 6px;
+}
+
+.area-fact-card p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+/* ===== LOCATION SERVICES GRID ===== */
+.area-services-section {
+    background: var(--color-light-gray);
+}
+
+.area-service-card {
+    background: var(--color-white);
+    padding: 28px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.area-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card);
+    border-color: var(--color-primary-accent);
+}
+
+.area-service-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+    .area-about-grid {
+        grid-template-columns: 1fr;
+    }
+    .area-facts {
+        grid-template-columns: 1fr;
+    }
+}

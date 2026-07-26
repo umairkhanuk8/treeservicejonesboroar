@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- Customization Instructions: Replace {{SERVICE_NAME}}, {{COMPANY_NAME}}, {{CITY_NAME}} -->
+    <title>{{SERVICE_NAME}} in {{CITY_NAME}} | {{COMPANY_NAME}}</title>
+    <meta name="description" content="Professional {{SERVICE_NAME}} services in {{CITY_NAME}}. Safe, efficient, and affordable solutions by {{COMPANY_NAME}}. Get a free quote today!">
+    <link rel="canonical" href="https://{{DOMAIN_URL}}/service-detail.html">
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Righteous&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/service-page.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo" aria-label="Home">
+                    <div class="logo-icon">★</div>
+                    <span>{{COMPANY_NAME}}</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="services.html" style="color:var(--color-gold);">Services</a>
+                    <a href="about.html">About</a>
+                    <a href="service-area.html">Areas</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <a href="tel:{{PHONE_NUMBER_RAW}}" class="nav-cta">Call {{PHONE_NUMBER}}</a>
+                <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MOBILE MENU DRAWER ===== -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="service-area.html">Areas</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- ===== SERVICE HERO ===== -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content reveal">
+                <div class="service-breadcrumb">
+                    <a href="index.html">Home</a> &gt; <a href="services.html">Services</a> &gt; <span>{{SERVICE_NAME}}</span>
+                </div>
+                <h1>Expert <span>{{SERVICE_NAME}}</span> Services in {{CITY_NAME}}</h1>
+                <p class="service-hero-text">
+                    Reliable, licensed, and safe {{SERVICE_NAME}} for residential and commercial properties. Free estimates and fast scheduling available.
+                </p>
+                <div class="btn-group">
+                    <a href="tel:{{PHONE_NUMBER_RAW}}" class="btn btn-primary">Call {{PHONE_NUMBER}}</a>
+                    <a href="contact.html" class="btn btn-outline">Request Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT & SIDEBAR ===== -->
+    <section class="service-layout" style="background:#fff;">
+        <div class="container">
+            <div class="service-grid">
+                
+                <!-- Main Content Area -->
+                <div class="service-main reveal-left">
+                    <h2>Professional {{SERVICE_NAME}} Solutions</h2>
+                    <p>
+                        At {{COMPANY_NAME}}, we specialize in top-tier {{SERVICE_NAME}} across {{CITY_NAME}}. Our experienced specialists utilize state-of-the-art equipment to deliver safe, effective, and timely results.
+                    </p>
+
+                    <!-- Feature Box -->
+                    <div class="service-feature-box">
+                        <h4>Why {{SERVICE_NAME}} is Essential</h4>
+                        <p style="margin:0;">Regular maintenance prevents hazardous build-ups, enhances property value, and protects structural safety.</p>
+                    </div>
+
+                    <h3>Key Benefits of Our {{SERVICE_NAME}} Service</h3>
+                    <ul class="service-checklist">
+                        <li>Licensed & Insured Professional Team</li>
+                        <li>Advanced Industry Equipment & Techniques</li>
+                        <li>Complete Safety Protocol Adherence</li>
+                        <li>Transparent Upfront Pricing with Free Estimates</li>
+                        <li>Thorough Post-Job Cleanup & Debris Removal</li>
+                    </ul>
+
+                    <h3>Our Step-by-Step Approach</h3>
+                    <p>
+                        1. <strong>Inspection & Estimate:</strong> We analyze the site, identify challenges, and provide a clear written quote.<br>
+                        2. <strong>Site Prep & Safety setup:</strong> Protective barriers and equipment positioned for maximum safety.<br>
+                        3. <strong>Execution:</strong> Expert technicians perform the service according to strict industry standards.<br>
+                        4. <strong>Final Inspection:</strong> Walkthrough with the owner to guarantee 100% satisfaction.
+                    </p>
+                </div>
+
+                <!-- Sidebar Widgets -->
+                <aside class="service-sidebar reveal-right">
+                    
+                    <!-- Navigation Widget -->
+                    <div class="widget">
+                        <h3>Other Services</h3>
+                        <ul class="widget-menu">
+                            <li><a href="service-detail.html" class="active">{{SERVICE_NAME}}</a></li>
+                            <li><a href="service-detail.html">Sub Service Two →</a></li>
+                            <li><a href="service-detail.html">Sub Service Three →</a></li>
+                            <li><a href="service-detail.html">Sub Service Four →</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Call to Action Widget -->
+                    <div class="widget-cta">
+                        <h3>Need Immediate Help?</h3>
+                        <p>Speak to our {{CITY_NAME}} team right now for instant assistance and quote scheduling.</p>
+                        <a href="tel:{{PHONE_NUMBER_RAW}}" class="btn btn-gold" style="width:100%;">Call {{PHONE_NUMBER}}</a>
+                    </div>
+
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section-padding" style="background:var(--color-light-gray);">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">Questions?</span>
+                <h2>Frequently Asked Questions about {{SERVICE_NAME}}</h2>
+            </div>
+            <div class="faq-container reveal" style="margin-top:40px;">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How much does {{SERVICE_NAME}} cost in {{CITY_NAME}}?</span>
+                        <div class="faq-icon">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cost depends on project scope, accessibility, and time required. Call us at {{PHONE_NUMBER}} for a free, no-obligation estimate!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How quickly can you start?</span>
+                        <div class="faq-icon">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer prompt scheduling, usually within 24-48 hours of initial assessment, with same-day emergency dispatch available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> {{COMPANY_NAME}}. All Rights Reserved.</p>
+                <p><a href="services.html" style="color:var(--color-gold);">View All Services</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+    <script src="js/script.js"></script>
+</body>
+</html>
