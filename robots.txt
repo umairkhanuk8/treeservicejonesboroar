@@ -1,0 +1,30 @@
+# robots.txt — Tree Service Jonesboro AR
+# https://treeservicejonesboroar.com
+
+User-agent: *
+Allow: /
+
+# AI crawlers — allow indexing for AI answer engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://treeservicejonesboroar.com/sitemap.xml

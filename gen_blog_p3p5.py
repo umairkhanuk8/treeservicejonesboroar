@@ -1,0 +1,543 @@
+"""Generate blog posts 3-10 standalone"""
+import os
+
+BASE = r"d:\Projects\treeservicejonesboroar"
+BLOG_DIR = os.path.join(BASE, "blog")
+os.makedirs(BLOG_DIR, exist_ok=True)
+
+# Shared components
+def header(title, desc, canonical, og_title, og_desc, og_url, schema_extra=""):
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>{title}</title>
+    <meta name="description" content="{desc}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{canonical}">
+    <meta name="geo.region" content="US-AR">
+    <meta name="geo.placename" content="Jonesboro, Arkansas">
+    <meta name="geo.position" content="35.8423;-90.7043">
+    <meta name="ICBM" content="35.8423, -90.7043">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{og_title}">
+    <meta property="og:description" content="{og_desc}">
+    <meta property="og:url" content="{og_url}">
+    <script type="application/ld+json">
+    {{"@context":"https://schema.org","@type":"Article","headline":"{og_title}","datePublished":"2025-07-26","author":{{"@type":"Organization","name":"Tree Service Jonesboro AR"}},"publisher":{{"@type":"Organization","name":"Tree Service Jonesboro AR"}},"mainEntityOfPage":{{"@type":"WebPage","@id":"{canonical}"}}}}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Righteous&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/service-page.css">
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo" aria-label="Tree Service Jonesboro AR - Home">
+                    <div class="logo-icon">&#x1F333;</div>
+                    <span>Tree Service Jonesboro</span>
+                </a>
+                <nav class="nav-links" aria-label="Main Navigation">
+                    <a href="../index.html">Home</a>
+                    <div class="dropdown">
+                        <a href="../services.html" class="dropbtn">Services &#9662;</a>
+                        <div class="dropdown-content">
+                            <a href="../tree-removal-jonesboro-ar.html">Tree Removal</a>
+                            <a href="../tree-trimming-jonesboro-ar.html">Tree Trimming</a>
+                            <a href="../tree-pruning-jonesboro-ar.html">Tree Pruning</a>
+                            <a href="../stump-grinding-jonesboro-ar.html">Stump Grinding</a>
+                            <a href="../emergency-tree-service-jonesboro-ar.html">Emergency Tree Service</a>
+                            <a href="../storm-damage-tree-cleanup-jonesboro-ar.html">Storm Damage Cleanup</a>
+                            <a href="../land-clearing-jonesboro-ar.html">Land Clearing</a>
+                            <a href="../commercial-tree-service-jonesboro-ar.html">Commercial Tree Service</a>
+                        </div>
+                    </div>
+                    <a href="../about.html">About</a>
+                    <div class="dropdown">
+                        <a href="../service-area.html" class="dropbtn">Areas &#9662;</a>
+                        <div class="dropdown-content dropdown-grid">
+                            <a href="../tree-service-brookland-ar.html">Brookland, AR</a>
+                            <a href="../tree-service-bono-ar.html">Bono, AR</a>
+                            <a href="../tree-service-bay-ar.html">Bay, AR</a>
+                            <a href="../tree-service-lake-city-ar.html">Lake City, AR</a>
+                            <a href="../tree-service-monette-ar.html">Monette, AR</a>
+                            <a href="../tree-service-paragould-ar.html">Paragould, AR</a>
+                            <a href="../tree-service-trumann-ar.html">Trumann, AR</a>
+                            <a href="../tree-service-harrisburg-ar.html">Harrisburg, AR</a>
+                            <a href="../tree-service-walnut-ridge-ar.html">Walnut Ridge, AR</a>
+                            <a href="../tree-service-pocahontas-ar.html">Pocahontas, AR</a>
+                            <a href="../tree-service-manila-ar.html">Manila, AR</a>
+                            <a href="../tree-service-leachville-ar.html">Leachville, AR</a>
+                            <a href="../service-area.html">View All Areas &#x2192;</a>
+                        </div>
+                    </div>
+                    <a href="index.html" style="color:var(--color-gold);">Blog</a>
+                    <a href="../contact.html">Contact</a>
+                </nav>
+                <a href="tel:8705550190" class="nav-cta">Call (870) 555-0190</a>
+                <button class="hamburger" id="hamburger-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
+        <a href="../index.html">Home</a>
+        <div class="mobile-dropdown-container">
+            <a href="../services.html" class="mobile-dropdown-toggle">Services <span class="mobile-arrow">&#9662;</span></a>
+            <div class="mobile-dropdown-links">
+                <a href="../tree-removal-jonesboro-ar.html">Tree Removal</a>
+                <a href="../tree-trimming-jonesboro-ar.html">Tree Trimming</a>
+                <a href="../tree-pruning-jonesboro-ar.html">Tree Pruning</a>
+                <a href="../stump-grinding-jonesboro-ar.html">Stump Grinding</a>
+                <a href="../emergency-tree-service-jonesboro-ar.html">Emergency Tree Service</a>
+                <a href="../storm-damage-tree-cleanup-jonesboro-ar.html">Storm Damage Cleanup</a>
+                <a href="../land-clearing-jonesboro-ar.html">Land Clearing</a>
+                <a href="../commercial-tree-service-jonesboro-ar.html">Commercial Tree Service</a>
+            </div>
+        </div>
+        <a href="../about.html">About</a>
+        <div class="mobile-dropdown-container">
+            <a href="../service-area.html" class="mobile-dropdown-toggle">Areas <span class="mobile-arrow">&#9662;</span></a>
+            <div class="mobile-dropdown-links">
+                <a href="../tree-service-brookland-ar.html">Brookland, AR</a>
+                <a href="../tree-service-paragould-ar.html">Paragould, AR</a>
+                <a href="../service-area.html">View All Areas &#x2192;</a>
+            </div>
+        </div>
+        <a href="index.html">Blog</a>
+        <a href="../contact.html">Contact</a>
+        <a href="tel:8705550190" class="btn btn-gold" style="margin-top:16px; text-align:center;">Call (870) 555-0190</a>
+    </div>
+"""
+
+SIDEBAR = """
+    <aside class="blog-sidebar">
+        <div class="sidebar-cta">
+            <h3>Need a Free Estimate?</h3>
+            <p>Call our Jonesboro team for an on-site assessment and written quote.</p>
+            <a href="tel:8705550190" class="btn btn-gold" id="sidebar-call">Call (870) 555-0190</a>
+            <a href="../contact.html" class="btn btn-outline" style="width:100%; justify-content:center; border-color:rgba(255,255,255,0.4); margin-top:8px;" id="sidebar-quote">Request Free Estimate</a>
+        </div>
+        <div class="sidebar-widget">
+            <h3>All Blog Posts</h3>
+            <ul>
+                <li><a href="tree-removal-cost-jonesboro-ar.html">Tree Removal Cost in Jonesboro</a></li>
+                <li><a href="when-to-remove-vs-trim-damaged-tree.html">Remove vs. Trim a Damaged Tree</a></li>
+                <li><a href="storm-tree-problems-northeast-arkansas.html">Storm Tree Problems in NE Arkansas</a></li>
+                <li><a href="professional-tree-trimming-jonesboro-properties.html">Tree Trimming Protects Properties</a></li>
+                <li><a href="diy-tree-cutting-vs-hiring-arborist.html">DIY vs. Professional Arborist</a></li>
+                <li><a href="tree-falls-on-jonesboro-property.html">Tree Falls on Your Property</a></li>
+                <li><a href="stump-grinding-safety-appearance.html">Stump Grinding Benefits</a></li>
+                <li><a href="tree-care-older-homes-jonesboro.html">Tree Care for Older Homes</a></li>
+                <li><a href="commercial-tree-maintenance-jonesboro-businesses.html">Commercial Tree Maintenance</a></li>
+                <li><a href="prepare-trees-severe-weather-arkansas.html">Prepare Trees for Severe Weather</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-widget">
+            <h3>Our Services</h3>
+            <ul>
+                <li><a href="../tree-removal-jonesboro-ar.html">Tree Removal</a></li>
+                <li><a href="../tree-trimming-jonesboro-ar.html">Tree Trimming</a></li>
+                <li><a href="../tree-pruning-jonesboro-ar.html">Tree Pruning</a></li>
+                <li><a href="../stump-grinding-jonesboro-ar.html">Stump Grinding</a></li>
+                <li><a href="../emergency-tree-service-jonesboro-ar.html">Emergency Tree Service</a></li>
+                <li><a href="../storm-damage-tree-cleanup-jonesboro-ar.html">Storm Damage Cleanup</a></li>
+                <li><a href="../land-clearing-jonesboro-ar.html">Land Clearing</a></li>
+                <li><a href="../commercial-tree-service-jonesboro-ar.html">Commercial Tree Service</a></li>
+            </ul>
+        </div>
+    </aside>"""
+
+FOOTER = """
+    <footer class="site-footer">
+        <div class="container">
+            <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:50px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,0.12);">
+                <div>
+                    <div class="logo" style="margin-bottom:16px;"><div class="logo-icon">&#x1F333;</div><span style="font-size:1.1rem;">Tree Service Jonesboro AR</span></div>
+                    <p style="font-size:0.88rem; color:rgba(255,255,255,0.65); line-height:1.7; margin-bottom:16px;">Professional tree removal, trimming, pruning, stump grinding, emergency response, and land clearing for residential, commercial, and rural properties across Northeast Arkansas.</p>
+                    <p style="font-size:0.88rem; color:rgba(255,255,255,0.65);"><strong style="color:var(--color-gold);">Phone:</strong> <a href="tel:8705550190" style="color:rgba(255,255,255,0.75);">(870) 555-0190</a><br><strong style="color:var(--color-gold);">Hours:</strong> Mon&ndash;Sat 7am&ndash;7pm<br><strong style="color:var(--color-gold);">Location:</strong> Jonesboro, AR 72401</p>
+                </div>
+                <div>
+                    <h4 style="font-family:'Figtree',sans-serif; font-size:0.8rem; text-transform:uppercase; letter-spacing:1.5px; color:var(--color-gold); margin-bottom:18px;">Services</h4>
+                    <ul style="display:flex; flex-direction:column; gap:8px;">
+                        <li><a href="../tree-removal-jonesboro-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Tree Removal</a></li>
+                        <li><a href="../tree-trimming-jonesboro-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Tree Trimming</a></li>
+                        <li><a href="../stump-grinding-jonesboro-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Stump Grinding</a></li>
+                        <li><a href="../emergency-tree-service-jonesboro-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Emergency Service</a></li>
+                        <li><a href="../storm-damage-tree-cleanup-jonesboro-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Storm Cleanup</a></li>
+                        <li><a href="../land-clearing-jonesboro-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Land Clearing</a></li>
+                        <li><a href="../commercial-tree-service-jonesboro-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Commercial Tree Care</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-family:'Figtree',sans-serif; font-size:0.8rem; text-transform:uppercase; letter-spacing:1.5px; color:var(--color-gold); margin-bottom:18px;">Service Areas</h4>
+                    <ul style="display:flex; flex-direction:column; gap:8px;">
+                        <li><a href="../tree-service-brookland-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Brookland</a></li>
+                        <li><a href="../tree-service-bono-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Bono</a></li>
+                        <li><a href="../tree-service-paragould-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Paragould</a></li>
+                        <li><a href="../tree-service-trumann-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Trumann</a></li>
+                        <li><a href="../tree-service-harrisburg-ar.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Harrisburg</a></li>
+                        <li><a href="../service-area.html" style="font-size:0.88rem; color:var(--color-gold);">View All Areas &#x2192;</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-family:'Figtree',sans-serif; font-size:0.8rem; text-transform:uppercase; letter-spacing:1.5px; color:var(--color-gold); margin-bottom:18px;">Quick Links</h4>
+                    <ul style="display:flex; flex-direction:column; gap:8px;">
+                        <li><a href="../index.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Home</a></li>
+                        <li><a href="../about.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">About Us</a></li>
+                        <li><a href="../services.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">All Services</a></li>
+                        <li><a href="../service-area.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Service Areas</a></li>
+                        <li><a href="index.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Blog</a></li>
+                        <li><a href="../contact.html" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+                <p style="margin:0; font-size:0.85rem; color:rgba(255,255,255,0.6);">&copy; <script>document.write(new Date().getFullYear())</script> Tree Service Jonesboro AR. All Rights Reserved.</p>
+                <p style="margin:0; font-size:0.83rem;">
+                    <a href="../index.html" style="color:var(--color-gold);">Home</a> &nbsp;|&nbsp;
+                    <a href="../services.html" style="color:var(--color-gold);">Services</a> &nbsp;|&nbsp;
+                    <a href="../service-area.html" style="color:var(--color-gold);">Areas</a> &nbsp;|&nbsp;
+                    <a href="index.html" style="color:var(--color-gold);">Blog</a> &nbsp;|&nbsp;
+                    <a href="../contact.html" style="color:var(--color-gold);">Contact</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">&#x2191;</button>
+    <script src="../js/script.js"></script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(btn){
+        btn.addEventListener('click',function(){
+            var item=btn.closest('.faq-item');
+            var wasOpen=item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+            if(!wasOpen) item.classList.add('open');
+        });
+    });
+    </script>
+</body>
+</html>"""
+
+def wrap(h, body_html):
+    return h + body_html + FOOTER
+
+# ─── POST 3: Storm Tree Problems ─────────────────────────────────
+p3 = header("Common Tree Problems Caused by Storms in Northeast Arkansas",
+"Thunderstorms and ice storms in Northeast Arkansas cause predictable tree damage. Learn to identify hanging limbs, split crotches, and uprooting risk after severe weather.",
+"https://treeservicejonesboroar.com/blog/storm-tree-problems-northeast-arkansas.html",
+"Common Tree Problems Caused by Storms in Northeast Arkansas",
+"Thunderstorms and ice storms in Northeast Arkansas cause predictable tree damage. Learn to identify hanging limbs, split crotches, and uprooting risk.",
+"https://treeservicejonesboroar.com/blog/storm-tree-problems-northeast-arkansas.html")
+
+p3 += """
+    <section class="blog-hero">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="sep">&#x2022;</span><a href="index.html">Blog</a><span class="sep">&#x2022;</span><span class="current">Storm Tree Problems in NE Arkansas</span></nav>
+            <span class="post-tag">Storm Damage</span>
+            <h1>Common Tree Problems Caused by Storms in Northeast Arkansas</h1>
+            <div class="post-meta">
+                <span class="post-meta-item"><span class="icon">&#x1F4C5;</span> July 2025</span>
+                <span class="post-meta-item"><span class="icon">&#x23F1;</span> 5 min read</span>
+                <span class="post-meta-item"><span class="icon">&#x1F4CD;</span> Northeast Arkansas</span>
+            </div>
+        </div>
+    </section>
+    <div class="featured-image-wrap">
+        <img src="../images/blog/storm-tree-problems-northeast-arkansas.png" alt="Professional tree crew assessing storm debris and broken limbs in a residential yard in Northeast Arkansas" loading="eager">
+    </div>
+    <div class="container">
+        <div class="blog-layout">
+            <main class="article-body">
+                <div class="answer-box">
+                    <strong>Quick Answer</strong>
+                    The most common storm-related tree problems in Northeast Arkansas include hanging broken limbs, partially uprooted trees, split trunk crotches, and trees that have fallen against fences or structures. Saturated soil from heavy rain makes uprooting more likely, and straight-line winds frequently break large canopy limbs without toppling the whole tree.
+                </div>
+                <p>Jonesboro and surrounding Craighead County see their share of severe weather. Thunderstorm lines, straight-line wind events, and occasional ice storms all affect the area's mature tree population in predictable ways. Knowing what to look for after a storm helps you prioritize what needs immediate attention.</p>
+
+                <h2>Hanging and Broken Limbs</h2>
+                <p>This is the most immediate hazard after most Northeast Arkansas storm events. High winds break large limbs that remain suspended in the canopy, caught by surrounding branches or held by a strip of bark. These are called widow-makers because they can drop without warning. Keep everyone away from under any affected tree until a crew can remove them safely.</p>
+
+                <h2>Split Trunk Crotches</h2>
+                <p>Many mature trees in established Jonesboro neighborhoods have co-dominant stems growing from the same point. This structure is visually appealing but mechanically weak. Under wind or ice load, these crotches split, tearing the trunk vertically. A partially split crotch is not stable&mdash;the remaining wood holding the two halves together can give way at any point. <a href="../tree-removal-jonesboro-ar.html">Expert tree removal support</a> is typically the right response for a major trunk split.</p>
+
+                <h2>Partially Uprooted Trees</h2>
+                <p>Heavy rain saturates soil across Craighead County, reducing the grip root systems have in the ground. When strong winds follow saturated ground, trees that would otherwise hold can shift or tip. A partially uprooted tree still under load is extremely unpredictable. These need to be evaluated and removed by a crew with the equipment to handle controlled removal under tension. <a href="../emergency-tree-service-jonesboro-ar.html">Rapid storm-damage response</a> is the right call for any partially uprooted tree near a structure.</p>
+
+                <h2>Trees Down Across Fences and Driveways</h2>
+                <p>Fallen trees crossing driveways or resting on fencing are common post-storm situations. If the fallen tree is on the ground with no tension and clear of utility lines, this is cleanup work. If it is resting against a fence under load, the fence is holding weight, and removal must be done carefully. <a href="../storm-damage-tree-cleanup-jonesboro-ar.html">Property cleanup following a storm</a> is often prioritized in phases: active hazards first, blocked access next, then general debris.</p>
+
+                <h2>Ice Storm Damage</h2>
+                <p>Late-winter ice events produce a different pattern. Ice accumulation adds weight to every branch, and limbs that would not fail under wind break under the compressive weight. Bradford pears, common throughout Jonesboro neighborhoods, are particularly prone to splitting under ice load due to their naturally weak branch structure.</p>
+
+                <h2>Post-Storm Hazard Assessment Checklist</h2>
+                <p>After any significant storm, walk your property carefully before letting children or pets outside. Look for:</p>
+                <ul>
+                    <li>Limbs that are partially attached and hanging overhead</li>
+                    <li>Trees that have shifted or developed a new lean</li>
+                    <li>Bark torn downward on the trunk</li>
+                    <li>Root flare movement or soil heaving on one side</li>
+                    <li>Cracks in major crotches or branch unions</li>
+                </ul>
+
+                <div class="article-cta">
+                    <h3>Storm Damage on Your Property?</h3>
+                    <p>We respond to storm damage calls throughout Jonesboro and Northeast Arkansas. Emergency and non-emergency cleanup handled by an experienced local crew.</p>
+                    <div class="btn-group">
+                        <a href="tel:8705550190" class="btn btn-gold" id="post3-cta-call">Call (870) 555-0190</a>
+                        <a href="../contact.html" class="btn btn-outline" id="post3-cta-quote">Request Estimate</a>
+                    </div>
+                </div>
+
+                <div class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">What tree problems are most common after a Northeast Arkansas thunderstorm?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">The most frequent issues include large broken limbs hanging in the canopy, partially uprooted trees leaning against structures, trees or limbs fallen across fences or driveways, and split trunk crotches where two major stems have separated under wind load.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">Is it safe to walk under a tree with hanging broken limbs?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">No. Hanging or partially detached limbs can drop without warning. Keep people and pets away from under any tree with visible hanging wood until a professional can assess and remove it.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">Does homeowners insurance cover storm-damaged tree removal in Jonesboro?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">It depends on your policy and where the tree falls. If a tree falls on an insured structure, the structural damage is often covered. The cost to remove the tree itself may or may not be included. Document everything with photos before any cleanup begins.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">How quickly should I call someone after storm tree damage?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">For trees against structures or active hazards, call immediately. For non-emergency debris, most reputable companies can respond within a few days. Be cautious of out-of-area contractors who show up unsolicited with pressure to sign contracts on the spot.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">Can I cut up fallen branches myself after a storm?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Small branches on the ground with no tension may be manageable for experienced homeowners with proper equipment. Never attempt to cut limbs that are under load, pinning something down, or near any utility line. The release of tension when cutting a loaded limb can be sudden and dangerous.</p></div>
+                    </div>
+                </div>
+
+                <h2>Bottom Line</h2>
+                <p>Storm damage in Northeast Arkansas follows predictable patterns once you know what to look for. Hanging limbs, split crotches, and partially uprooted trees require the most immediate professional attention. When in doubt, maintain a safe distance and get a professional assessment before starting any cleanup yourself.</p>
+            </main>""" + SIDEBAR + """
+        </div>
+    </div>
+    <section class="related-posts">
+        <div class="container">
+            <h2>More Tree Care Articles</h2>
+            <div class="related-grid">
+                <a href="when-to-remove-vs-trim-damaged-tree.html" class="related-card"><img src="../images/blog/remove-vs-trim-damaged-tree.png" alt="Remove vs trim a damaged tree" class="related-card-img" loading="lazy"><div class="related-card-body"><div class="related-card-tag">Tree Care</div><div class="related-card-title">When Should a Damaged Tree Be Removed Instead of Trimmed?</div><p class="related-card-excerpt">Learn the structural signs that distinguish a salvageable tree from one that needs full removal.</p><span class="related-read-more">Read Article &#x2192;</span></div></a>
+                <a href="prepare-trees-severe-weather-arkansas.html" class="related-card"><img src="../images/blog/prepare-trees-severe-weather-arkansas.png" alt="Prepare trees for severe weather" class="related-card-img" loading="lazy"><div class="related-card-body"><div class="related-card-tag">Storm Prep</div><div class="related-card-title">How to Prepare Your Trees for Severe Weather in NE Arkansas</div><p class="related-card-excerpt">Pre-season tree maintenance can significantly reduce storm damage risk to your property.</p><span class="related-read-more">Read Article &#x2192;</span></div></a>
+                <a href="tree-falls-on-jonesboro-property.html" class="related-card"><img src="../images/blog/tree-falls-on-jonesboro-property.png" alt="Tree falls on property" class="related-card-img" loading="lazy"><div class="related-card-body"><div class="related-card-tag">Emergency</div><div class="related-card-title">What to Do When a Tree Falls on Your Jonesboro Property</div><p class="related-card-excerpt">Step-by-step guidance on the immediate decisions you face when a tree comes down on your property.</p><span class="related-read-more">Read Article &#x2192;</span></div></a>
+            </div>
+        </div>
+    </section>
+"""
+with open(os.path.join(BLOG_DIR,"storm-tree-problems-northeast-arkansas.html"),"w",encoding="utf-8") as f:
+    f.write(p3 + FOOTER)
+print("Written: storm-tree-problems-northeast-arkansas.html")
+
+# ─── POST 4: Tree Trimming Protects Properties ───────────────────
+p4 = header("How Professional Tree Trimming Protects Jonesboro Properties",
+"Regular professional tree trimming in Jonesboro removes deadwood, clears rooflines, reduces storm risk, and manages utility line clearance before problems develop.",
+"https://treeservicejonesboroar.com/blog/professional-tree-trimming-jonesboro-properties.html",
+"How Professional Tree Trimming Protects Jonesboro Properties",
+"Regular professional tree trimming in Jonesboro removes deadwood, clears rooflines, reduces storm risk, and manages utility line clearance.",
+"https://treeservicejonesboroar.com/blog/professional-tree-trimming-jonesboro-properties.html")
+
+p4 += """
+    <section class="blog-hero">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="sep">&#x2022;</span><a href="index.html">Blog</a><span class="sep">&#x2022;</span><span class="current">Tree Trimming Protects Properties</span></nav>
+            <span class="post-tag">Tree Trimming</span>
+            <h1>How Professional Tree Trimming Protects Jonesboro Properties</h1>
+            <div class="post-meta"><span class="post-meta-item"><span class="icon">&#x1F4C5;</span> July 2025</span><span class="post-meta-item"><span class="icon">&#x23F1;</span> 5 min read</span><span class="post-meta-item"><span class="icon">&#x1F4CD;</span> Jonesboro, AR</span></div>
+        </div>
+    </section>
+    <div class="featured-image-wrap">
+        <img src="../images/blog/tree-trimming-protects-jonesboro-property.png" alt="Professional tree trimmer in a bucket lift pruning branches overhanging a residential roof in Jonesboro Arkansas" loading="eager">
+    </div>
+    <div class="container">
+        <div class="blog-layout">
+            <main class="article-body">
+                <div class="answer-box">
+                    <strong>Quick Answer</strong>
+                    Regular professional tree trimming protects Jonesboro properties by removing deadwood before it falls, establishing clearance from roofs and structures, reducing wind resistance during storm season, and preventing branches from contacting siding, gutters, or utility lines. It is one of the most cost-effective forms of ongoing property maintenance.
+                </div>
+                <p>Mature trees are one of the most valuable features on a Jonesboro property. They provide shade, reduce energy costs, and add significant curb appeal. They also require maintenance. When that maintenance is skipped, trees that should be an asset become a liability.</p>
+
+                <h2>Deadwood Removal Before It Falls</h2>
+                <p>Dead branches accumulate in canopies over time. A branch that dies gradually loses its attachment to the living wood around it and eventually falls. Professional trimming identifies and removes deadwood throughout the canopy, including the smaller accumulation of dead wood higher in the tree not visible from the ground. For <a href="../tree-pruning-jonesboro-ar.html">structural pruning by trained professionals</a>, this includes proper cuts at the branch collar to promote healthy compartmentalization.</p>
+
+                <h2>Roof and Structure Clearance</h2>
+                <p>Branches that overhang or contact a roof allow wildlife access, abrade shingles through constant movement, accumulate debris in gutters, and can fall on the roof under storm load. Clearance trimming establishes and maintains a safe working distance between the canopy edge and roof surfaces. Addressing this before branches make contact is always the more cost-effective approach.</p>
+
+                <h2>Wind Resistance Reduction</h2>
+                <p>A dense, unpruned canopy acts like a sail, catching wind and placing enormous stress on trunk and root connections during storm events. Crown thinning through <a href="../tree-trimming-jonesboro-ar.html">routine care for overgrown trees</a> reduces that load without removing healthy structure. In the context of Northeast Arkansas weather, this matters. Thunderstorm lines regularly push through Jonesboro with straight-line wind gusts that test every tree on the property.</p>
+
+                <h2>Utility Line Clearance</h2>
+                <p>Branches growing into power lines and communication lines create outage risk, emergency utility crew response, and fire risk in dry conditions. Getting proactive trimming done before branches reach utility lines gives a trained crew the ability to make proper structural cuts rather than clearance-only cuts that don't account for the tree's health. Once branches are in the wire zone, options narrow considerably.</p>
+
+                <h2>Fence and Neighbor Property Considerations</h2>
+                <p>Branches that grow over property lines can become a point of conflict with neighbors and a source of liability if they fall on adjacent property. In established Jonesboro subdivisions near Arkansas State University and Craighead Forest Park, mature trees routinely grow beyond property boundaries. Proactive trimming to manage growth direction is easier and less costly than reactive removal after a branch falls on a neighbor's vehicle or fence.</p>
+
+                <h2>Maintaining Driveway and Walkway Clearance</h2>
+                <p>Low-hanging branches over driveways create vehicle clearance issues and reduce pedestrian safety. Seasonal growth can drop canopy edges several feet in a single active growing season for fast-growing species. Clearance trimming establishes a maintained vertical clearance that prevents repeated emergency calls each growing season.</p>
+
+                <div class="article-cta">
+                    <h3>Schedule Professional Trimming for Your Jonesboro Property</h3>
+                    <p>We handle residential and commercial tree trimming throughout Jonesboro, Brookland, Bono, and surrounding communities. Written estimates after on-site assessment.</p>
+                    <div class="btn-group">
+                        <a href="tel:8705550190" class="btn btn-gold" id="post4-cta-call">Call (870) 555-0190</a>
+                        <a href="../contact.html" class="btn btn-outline" id="post4-cta-quote">Request Trimming Estimate</a>
+                    </div>
+                </div>
+
+                <div class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">How often should trees be professionally trimmed in Jonesboro?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Most mature shade trees benefit from professional trimming every 3 to 5 years. Faster-growing species, trees near structures, and trees along utility corridors may need attention on a shorter cycle. Young trees benefit from structural pruning more frequently in their first decade to establish a sound framework.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">What is the difference between trimming and pruning?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Trimming typically refers to cutting back overgrown branches for clearance or aesthetic reasons. Pruning involves more selective cuts focused on the tree's structure, health, and long-term development. Both require proper technique to avoid creating large wounds or leaving stubs that invite decay.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">Can improper trimming damage a tree?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Yes. Topping, flush-cutting through the branch collar, and removing too much live crown in a single session can all cause long-term damage. Large pruning wounds made incorrectly take much longer to compartmentalize and are more susceptible to rot and disease entry.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">Is spring or fall better for tree trimming in Arkansas?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Late winter or early spring, before new growth emerges, is generally a good time for structural pruning on most species in Arkansas. However, dead, damaged, or hazardous limbs should be addressed whenever they are identified rather than waiting for a specific season.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">Does trimming trees near power lines require utility company coordination?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">In some cases, yes. If branches are in contact with or very close to live conductors, trimming may need to be done in coordination with the utility company or by crews certified for utility-adjacent work. Never attempt to trim branches touching live power lines yourself.</p></div>
+                    </div>
+                </div>
+
+                <h2>Bottom Line</h2>
+                <p>Professional tree trimming is part of responsible property ownership in Jonesboro. The cost of <a href="../tree-trimming-jonesboro-ar.html">seasonal canopy maintenance</a> on a planned schedule is consistently less than emergency response after a branch fails. Get trimming done before the tree creates a problem, not after.</p>
+            </main>""" + SIDEBAR + """
+        </div>
+    </div>
+    <section class="related-posts">
+        <div class="container">
+            <h2>More Tree Care Articles</h2>
+            <div class="related-grid">
+                <a href="prepare-trees-severe-weather-arkansas.html" class="related-card"><img src="../images/blog/prepare-trees-severe-weather-arkansas.png" alt="Storm prep for trees" class="related-card-img" loading="lazy"><div class="related-card-body"><div class="related-card-tag">Storm Prep</div><div class="related-card-title">How to Prepare Your Trees for Severe Weather in NE Arkansas</div><p class="related-card-excerpt">Pre-storm tree maintenance can reduce damage risk. Learn what professionals prioritize before severe weather season.</p><span class="related-read-more">Read Article &#x2192;</span></div></a>
+                <a href="when-to-remove-vs-trim-damaged-tree.html" class="related-card"><img src="../images/blog/remove-vs-trim-damaged-tree.png" alt="Remove vs trim tree" class="related-card-img" loading="lazy"><div class="related-card-body"><div class="related-card-tag">Tree Care</div><div class="related-card-title">When Should a Damaged Tree Be Removed Instead of Trimmed?</div><p class="related-card-excerpt">The structural signs that determine whether a damaged tree needs removal or corrective trimming.</p><span class="related-read-more">Read Article &#x2192;</span></div></a>
+                <a href="tree-care-older-homes-jonesboro.html" class="related-card"><img src="../images/blog/tree-care-older-homes-jonesboro.png" alt="Tree care for older homes" class="related-card-img" loading="lazy"><div class="related-card-body"><div class="related-card-tag">Residential Care</div><div class="related-card-title">Tree Care for Older Homes and Mature Landscapes in Jonesboro</div><p class="related-card-excerpt">Mature trees on older Jonesboro properties have specific care needs that differ from younger landscape trees.</p><span class="related-read-more">Read Article &#x2192;</span></div></a>
+            </div>
+        </div>
+    </section>
+"""
+with open(os.path.join(BLOG_DIR,"professional-tree-trimming-jonesboro-properties.html"),"w",encoding="utf-8") as f:
+    f.write(p4 + FOOTER)
+print("Written: professional-tree-trimming-jonesboro-properties.html")
+
+# ─── POST 5: DIY vs Professional ─────────────────────────────────
+p5 = header("DIY Tree Cutting vs. Hiring a Professional Arborist",
+"When is it safe to cut a tree yourself, and when should you hire a professional? A practical guide to making the right call based on tree size, location, and risk.",
+"https://treeservicejonesboroar.com/blog/diy-tree-cutting-vs-hiring-arborist.html",
+"DIY Tree Cutting vs. Hiring a Professional Arborist",
+"When is it safe to cut a tree yourself, and when should you hire a professional? A practical guide based on tree size, location, and risk.",
+"https://treeservicejonesboroar.com/blog/diy-tree-cutting-vs-hiring-arborist.html")
+
+p5 += """
+    <section class="blog-hero">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="sep">&#x2022;</span><a href="index.html">Blog</a><span class="sep">&#x2022;</span><span class="current">DIY vs. Professional Arborist</span></nav>
+            <span class="post-tag">Tree Safety</span>
+            <h1>DIY Tree Cutting vs. Hiring a Professional Arborist</h1>
+            <div class="post-meta"><span class="post-meta-item"><span class="icon">&#x1F4C5;</span> July 2025</span><span class="post-meta-item"><span class="icon">&#x23F1;</span> 5 min read</span><span class="post-meta-item"><span class="icon">&#x1F4CD;</span> Jonesboro, AR</span></div>
+        </div>
+    </section>
+    <div class="featured-image-wrap">
+        <img src="../images/blog/diy-vs-professional-arborist.png" alt="Professional arborist in full climbing gear in a tree canopy compared to a homeowner assessing a large tree in a suburban yard" loading="eager">
+    </div>
+    <div class="container">
+        <div class="blog-layout">
+            <main class="article-body">
+                <div class="answer-box">
+                    <strong>Quick Answer</strong>
+                    Small, low-risk tree work can be a reasonable DIY project for experienced homeowners. Medium and large trees, work near structures or power lines, removal requiring directional felling, and any tree that is dead, heavily leaning, or positioned over a structure should be handled by trained professionals with the right equipment and insurance coverage.
+                </div>
+                <p>There is a genuine category of tree work that handy homeowners can handle safely. There is also a category where doing it yourself creates far more risk than the cost of hiring a professional saves. Understanding where that line is makes all the difference.</p>
+
+                <h2>What Homeowners Can Reasonably Handle</h2>
+                <p>Light pruning of small branches reachable from the ground with loppers or a handsaw is generally well within DIY range. Cleanup of debris that has already fallen with no ongoing hazard is also manageable. If the wood is on the ground, in the open, with no tension on it, and you have a chainsaw you know how to use safely, that is a reasonable scope.</p>
+                <p>Some people are comfortable removing small ornamental trees under 15 feet in open areas where a controlled fall is straightforward. If that describes your situation, and you have appropriate safety equipment&mdash;chainsaw chaps, gloves, eye and hearing protection, and a clear drop zone with no one nearby&mdash;it may be workable.</p>
+
+                <h2>When to Call a Professional</h2>
+                <h3>Any Tree Near a Structure, Fence, or Vehicle</h3>
+                <p>When a tree has to fall or be lowered in a specific direction, you are no longer doing simple felling. You are doing controlled directional removal with rigging, which requires trained technique and proper rope and rigging equipment. Getting this wrong is expensive and dangerous to bystanders. A professional crew has the tools and training to rig sections down safely.</p>
+
+                <h3>Trees Near Power Lines</h3>
+                <p>This is not a gray area. Any tree in contact with or near a power line requires either utility company coordination or a trained crew with relevant certifications. Do not attempt to cut branches that are touching or close to overhead electrical conductors.</p>
+
+                <h3>Dead, Diseased, or Heavily Leaning Trees</h3>
+                <p>Dead trees have brittle wood that behaves unpredictably during cutting. Trees that are already leaning have tension built up in the wood, and managing the release of that tension when you cut requires experience. For <a href="../tree-removal-jonesboro-ar.html">safe removal of hazardous trees</a>, professional crews use wedges, bore cuts, rigging systems, and sometimes cranes to control the outcome.</p>
+
+                <h3>Trees Requiring Climbing</h3>
+                <p>As soon as a chainsaw and a ladder appear in the same sentence, the risk profile escalates sharply. Arborists who climb use specialized harnesses and rigging systems. Homeowners improvising with extension ladders and chainsaws account for a significant portion of serious tree-work injuries each year. <a href="../tree-pruning-jonesboro-ar.html">Selective branch care</a> in the upper canopy of any tree over 15 feet is consistently better left to trained climbers.</p>
+
+                <h2>The Real Cost Comparison</h2>
+                <p>It is tempting to look at a professional quote and compare it to chainsaw rental. The real comparison includes your time, equipment costs, debris disposal, personal risk, and property damage risk if something goes wrong. On small jobs in safe conditions, DIY can save money. On medium to large jobs, the professional quote often looks different once all those variables are counted.</p>
+
+                <div class="article-cta">
+                    <h3>Not Sure If Your Tree Job Is DIY or Professional?</h3>
+                    <p>Call us for an on-site assessment. We will give you a straight answer about what the job involves and provide a written estimate if professional work is needed.</p>
+                    <div class="btn-group">
+                        <a href="tel:8705550190" class="btn btn-gold" id="post5-cta-call">Call (870) 555-0190</a>
+                        <a href="../contact.html" class="btn btn-outline" id="post5-cta-quote">Request Assessment</a>
+                    </div>
+                </div>
+
+                <div class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">What size tree is reasonable for a homeowner to cut themselves?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Small ornamental trees under 10-15 feet that can be felled in a clear, open area with no overhead hazards or nearby structures are generally within reach for experienced homeowners with proper equipment. Anything larger, near a fence or structure, or requiring a ladder and chainsaw simultaneously is a different risk category.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">Why is cutting near power lines so dangerous?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Live power lines carry voltages that can arc to objects that come within several feet of the conductor. A branch falling toward a power line, a saw blade held too close, or even a wet branch touching the wire can result in electrocution. Never work near power lines without utility company coordination.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">What are the most common homeowner tree-cutting injuries?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Chainsaw kickback, falls from ladders, being struck by falling branches, and being hit by a tree that fell in an unintended direction are the leading causes. Many of these occur on what seemed like straightforward small jobs.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">Is it cheaper to do tree work yourself?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">On small jobs where the work is genuinely within your skill set and the safety conditions are right, DIY can save money. On medium to large jobs, equipment rental, time, debris disposal, and risk often make a professional quote more economical than it first appears.</p></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question"><span itemprop="name">How do I know if a tree professional is legitimate?</span><span class="faq-icon">+</span></button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Ask about general liability insurance and workers compensation coverage. Ask for a written estimate. Be cautious of anyone who shows up uninvited after a storm, insists on same-day payment, or cannot provide insurance documentation. Established local companies can be verified through referrals and business records.</p></div>
+                    </div>
+                </div>
+
+                <h2>Bottom Line</h2>
+                <p>DIY tree work has its place for small, low-risk jobs handled by experienced homeowners. For everything else, the cost of bringing in Jonesboro tree care specialists is a lot easier to manage than the cost of a mistake. When in doubt, get a quote first. It is free, and knowing what you are actually dealing with is always worth the call.</p>
+            </main>""" + SIDEBAR + """
+        </div>
+    </div>
+    <section class="related-posts">
+        <div class="container">
+            <h2>More Tree Care Articles</h2>
+            <div class="related-grid">
+                <a href="when-to-remove-vs-trim-damaged-tree.html" class="related-card"><img src="../images/blog/remove-vs-trim-damaged-tree.png" alt="Remove or trim a damaged tree" class="related-card-img" loading="lazy"><div class="related-card-body"><div class="related-card-tag">Tree Care</div><div class="related-card-title">When Should a Damaged Tree Be Removed Instead of Trimmed?</div><p class="related-card-excerpt">Understand which damage patterns call for removal versus targeted corrective pruning.</p><span class="related-read-more">Read Article &#x2192;</span></div></a>
+                <a href="tree-removal-cost-jonesboro-ar.html" class="related-card"><img src="../images/blog/tree-removal-cost-jonesboro-ar.png" alt="Tree removal cost Jonesboro" class="related-card-img" loading="lazy"><div class="related-card-body"><div class="related-card-tag">Tree Removal</div><div class="related-card-title">How Much Does Tree Removal Cost in Jonesboro, Arkansas?</div><p class="related-card-excerpt">Get a clear picture of what drives tree removal pricing in Jonesboro and what to expect from a written estimate.</p><span class="related-read-more">Read Article &#x2192;</span></div></a>
+                <a href="professional-tree-trimming-jonesboro-properties.html" class="related-card"><img src="../images/blog/tree-trimming-protects-jonesboro-property.png" alt="Tree trimming protects property" class="related-card-img" loading="lazy"><div class="related-card-body"><div class="related-card-tag">Tree Trimming</div><div class="related-card-title">How Professional Tree Trimming Protects Jonesboro Properties</div><p class="related-card-excerpt">Regular trimming by a trained crew is one of the most cost-effective forms of ongoing property maintenance.</p><span class="related-read-more">Read Article &#x2192;</span></div></a>
+            </div>
+        </div>
+    </section>
+"""
+with open(os.path.join(BLOG_DIR,"diy-tree-cutting-vs-hiring-arborist.html"),"w",encoding="utf-8") as f:
+    f.write(p5 + FOOTER)
+print("Written: diy-tree-cutting-vs-hiring-arborist.html")
+print("Posts 3, 4, 5 complete.")
