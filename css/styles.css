@@ -1286,59 +1286,196 @@ main section[id] {
     :root {
         --section-padding: 60px 16px;
     }
-    
-    .nav-links {
-        display: none;
-    }
 
-    .nav-cta {
-        display: none !important;
-    }
-    
-    .hamburger {
-        display: flex;
-    }
-    
+    /* ---- HEADER ---- */
+    .nav-links { display: none; }
+    .nav-cta   { display: none !important; }
+    .hamburger { display: flex; }
 
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+    /* ---- CONTAINER ---- */
+    .container { padding: 0 16px; }
 
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .specialty-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .equipment-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .case-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .process-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
+    /* ---- HERO: homepage (inline-style paddings overridden with !important) ---- */
+    .hero {
+        min-height: 90vh !important;
+        padding: 110px 16px 80px !important;
         text-align: center;
+        background-position: center top !important;
     }
-    
+    .hero h1  { font-size: clamp(26px, 7.5vw, 40px) !important; }
+    .hero p   { font-size: 15px; }
+    .hero-rating { font-size: 13px; }
+    .hero-content { text-align: center; }
+    .hero .btn-group { justify-content: center; flex-direction: column; align-items: center; }
+
+    /* ---- HERO: service pages ---- */
+    .service-hero {
+        min-height: 360px !important;
+        padding: 110px 16px 56px !important;
+        background-position: center top !important;
+    }
+    .service-hero h1 { font-size: clamp(22px, 6vw, 34px) !important; }
+    .service-hero .btn-group { flex-direction: column; }
+    .service-hero .btn { width: 100% !important; }
+
+    /* ---- HERO: area pages ---- */
+    .area-hero {
+        min-height: 360px !important;
+        padding: 110px 16px 56px !important;
+        background-position: center top !important;
+    }
+    .area-hero h1 { font-size: clamp(22px, 6vw, 34px) !important; }
+    .area-hero .btn-group { flex-direction: column !important; }
+    .area-hero .btn { width: 100% !important; }
+
+    /* ---- HERO: about & contact (has inline style) ---- */
+    .about-hero,
+    .contact-hero {
+        padding: 110px 16px 56px !important;
+        min-height: 360px !important;
+        background-position: center top !important;
+    }
+
+    /* ---- BUTTONS ---- */
     .btn-group {
         flex-direction: column;
+        align-items: stretch;
     }
-    
-    .btn {
-        width: 100%;
+    .btn { width: 100%; justify-content: center; padding: 15px 24px; }
+
+    /* ---- CLASS-BASED GRIDS → SINGLE COLUMN ---- */
+    .features-grid     { grid-template-columns: 1fr; }
+    .why-grid          { grid-template-columns: 1fr; }
+    .specialty-grid    { grid-template-columns: 1fr; }
+    .equipment-grid    { grid-template-columns: 1fr; }
+    .case-grid         { grid-template-columns: 1fr; }
+    .process-grid      { grid-template-columns: 1fr; }
+    .service-grid      { grid-template-columns: 1fr !important; }
+
+    /* ---- INLINE GRID OVERRIDES ---- */
+    div[style*="grid-template-columns:1fr 1fr"],
+    div[style*="grid-template-columns: 1fr 1fr"],
+    div[style*="grid-template-columns:2fr 1fr"],
+    div[style*="grid-template-columns: 2fr 1fr"],
+    div[style*="grid-template-columns:1fr 2fr"],
+    div[style*="grid-template-columns: 1fr 2fr"],
+    div[style*="grid-template-columns:1fr 420px"],
+    div[style*="grid-template-columns: 1fr 420px"],
+    div[style*="grid-template-columns:1fr 340px"],
+    div[style*="grid-template-columns: 1fr 340px"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
     }
+    /* Footer 4-col → 2-col on tablet */
+    div[style*="grid-template-columns:2fr 1fr 1fr 1fr"],
+    div[style*="grid-template-columns: 2fr 1fr 1fr 1fr"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 24px !important;
+        padding-bottom: 32px !important;
+    }
+
+    /* ---- CASE CARDS ---- */
+    .case-card,
+    .case-card:nth-child(even) {
+        grid-template-columns: 1fr !important;
+    }
+    .case-card:nth-child(even) .case-img-wrap,
+    .case-card:nth-child(even) .case-content { order: unset !important; }
+    .case-img-wrap { min-height: 220px; }
+    .case-content  { padding: 24px 20px; }
+
+    /* ---- TRUST BAR ---- */
+    .trust-bar-inner { flex-wrap: wrap; justify-content: flex-start; gap: 10px 0; }
+    .trust-divider   { display: none !important; }
+    .trust-item      { padding: 4px 12px; font-size: 13px; }
+
+    /* ---- FOOTER ---- */
+    .footer-grid   { grid-template-columns: 1fr; gap: 28px; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+
+    /* ---- SERVICE SIDEBAR ---- */
+    .service-sidebar { position: static !important; }
+
+    /* ---- CARDS / WIDGETS ---- */
+    .card   { padding: 24px 18px; }
+    .widget { padding: 24px 18px; }
+
+    /* ---- AREA PAGE ---- */
+    .area-about-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+    .area-facts      { grid-template-columns: 1fr 1fr !important; }
+    .area-about-img  { height: 260px; }
+
+    /* ---- MISC ---- */
+    .section-intro { font-size: 15px; margin-bottom: 28px; }
+    .faq-question  { padding: 16px 14px; font-size: 15px; }
+    .faq-answer    { padding: 12px 14px; }
+    .cta-banner    { padding: 40px 24px; }
+    .cta-banner h2 { font-size: clamp(22px, 6vw, 32px); }
+    .back-to-top   { bottom: 20px; right: 16px; }
+
+    h1 { font-size: clamp(26px, 7vw, 40px); }
+    h2 { font-size: clamp(22px, 5vw, 32px); }
+    h3 { font-size: clamp(18px, 4vw, 22px); }
 }
+
+/* ==========================================
+   PHONE (max-width: 480px)
+   ========================================== */
+@media (max-width: 480px) {
+    :root { --section-padding: 50px 14px; }
+    .container { padding: 0 14px; }
+
+    /* Logo */
+    .logo      { font-size: 17px !important; }
+    .logo-icon { width: 30px !important; height: 30px !important; font-size: 16px !important; }
+
+    /* Heros */
+    .hero          { min-height: 85vh !important; padding: 95px 14px 70px !important; }
+    .hero h1       { font-size: clamp(24px, 8vw, 34px) !important; }
+    .service-hero  { min-height: 320px !important; padding: 95px 14px 48px !important; }
+    .service-hero h1 { font-size: clamp(20px, 7vw, 28px) !important; }
+    .area-hero     { min-height: 320px !important; padding: 95px 14px 48px !important; }
+    .area-hero h1  { font-size: clamp(20px, 7vw, 28px) !important; }
+    .about-hero,
+    .contact-hero  { padding: 95px 14px 48px !important; min-height: 320px !important; }
+
+    /* Footer → 1-col */
+    div[style*="grid-template-columns:2fr 1fr 1fr 1fr"],
+    div[style*="grid-template-columns: 2fr 1fr 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Area facts → 1-col */
+    .area-facts { grid-template-columns: 1fr !important; }
+
+    /* Mobile menu */
+    .mobile-menu { padding: 80px 20px 32px; gap: 20px; }
+    .mobile-menu a { font-size: 20px; }
+
+    /* Cards */
+    .card { padding: 20px 16px; }
+    .section-label { font-size: 11px; letter-spacing: 1.5px; padding: 5px 14px; }
+    .trust-item { font-size: 12px; gap: 8px; }
+    .widget-cta { padding: 24px 18px; }
+    .cta-banner { padding: 32px 16px; }
+    h1 { font-size: clamp(22px, 8vw, 32px) !important; }
+    h2 { font-size: clamp(20px, 6vw, 28px); }
+}
+
+/* ==========================================
+   VERY SMALL PHONES (max-width: 360px)
+   ========================================== */
+@media (max-width: 360px) {
+    .container    { padding: 0 12px; }
+    .hero         { padding: 90px 12px 60px !important; }
+    .hero h1      { font-size: clamp(20px, 9vw, 28px) !important; }
+    .service-hero { padding: 90px 12px 44px !important; }
+    .area-hero    { padding: 90px 12px 44px !important; }
+    .about-hero,
+    .contact-hero { padding: 90px 12px 44px !important; }
+    .btn          { padding: 13px 18px; font-size: 13px; }
+    .mobile-menu  { padding: 75px 16px 28px; }
+    .mobile-menu a { font-size: 18px; }
+    .logo         { font-size: 15px !important; }
+}
+
