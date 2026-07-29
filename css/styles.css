@@ -265,13 +265,10 @@ main section[id] {
 .logo-icon {
     width: 36px;
     height: 36px;
-    background: var(--color-primary-accent);
-    color: var(--color-gold);
     border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
 }
 
 .nav-links {
@@ -1427,7 +1424,7 @@ main section[id] {
 
     /* Logo */
     .logo      { font-size: 17px !important; }
-    .logo-icon { width: 30px !important; height: 30px !important; font-size: 16px !important; }
+    .logo-icon { width: 30px !important; height: 30px !important; }
 
     /* Heros */
     .hero          { min-height: 85vh !important; padding: 95px 14px 70px !important; }
