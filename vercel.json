@@ -12,6 +12,9 @@
     { "source": "/service-area.html",    "destination": "/service-area", "permanent": true },
     { "source": "/blog/index.html",      "destination": "/blog",         "permanent": true },
     { "source": "/index.html",           "destination": "/",             "permanent": true },
+    { "source": "/index.php",            "destination": "/",             "permanent": true },
+    { "source": "/home.php",             "destination": "/",             "permanent": true },
+    { "source": "/default.php",          "destination": "/",             "permanent": true },
     { "source": "/home",                 "destination": "/",             "permanent": true }
   ],
   "headers": [
