@@ -194,6 +194,10 @@
     /* ---- BLOG GRID ---- */
     .blog-grid { grid-template-columns: 1fr !important; }
 
+    /* ---- BEFORE & AFTER GRID ---- */
+    .before-after-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+    .ba-image-wrap img { height: 180px; }
+
     /* ---- TESTIMONIALS ---- */
     .testimonials-grid { grid-template-columns: 1fr !important; }
 
