@@ -3,224 +3,248 @@
 
   <!-- Core Pages -->
   <url>
-    <loc>https://treeservicejonesboroar.com/</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/about.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/about</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/services.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/services</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/service-area.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/service-area</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/contact.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/contact</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://treeservicejonesboroar.net/our-team</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://treeservicejonesboroar.net/editorial-guidelines</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://treeservicejonesboroar.net/privacy-policy</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://treeservicejonesboroar.net/sitemap</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 
   <!-- Service Pages -->
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-removal-jonesboro-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-removal-jonesboro-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-trimming-jonesboro-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-trimming-jonesboro-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-pruning-jonesboro-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-pruning-jonesboro-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/stump-grinding-jonesboro-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/stump-grinding-jonesboro-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/emergency-tree-service-jonesboro-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/emergency-tree-service-jonesboro-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/storm-damage-tree-cleanup-jonesboro-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/storm-damage-tree-cleanup-jonesboro-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/land-clearing-jonesboro-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/land-clearing-jonesboro-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/commercial-tree-service-jonesboro-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/commercial-tree-service-jonesboro-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Service Area Pages -->
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-brookland-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-brookland-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-bono-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-bono-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-bay-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-bay-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-lake-city-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-lake-city-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-monette-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-monette-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-paragould-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-paragould-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-trumann-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-trumann-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-harrisburg-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-harrisburg-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-walnut-ridge-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-walnut-ridge-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-pocahontas-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-pocahontas-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-manila-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-manila-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/tree-service-leachville-ar.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/tree-service-leachville-ar</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Blog Pages -->
   <url>
-    <loc>https://treeservicejonesboroar.com/blog/index.html</loc>
-    <lastmod>2025-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/blog</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://treeservicejonesboroar.net/blog/tree-removal-cost-jonesboro-ar</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/blog/tree-removal-cost-jonesboro-ar.html</loc>
-    <lastmod>2025-07-01</lastmod>
+    <loc>https://treeservicejonesboroar.net/blog/when-to-remove-vs-trim-damaged-tree</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/blog/when-to-remove-vs-trim-damaged-tree.html</loc>
-    <lastmod>2025-07-05</lastmod>
+    <loc>https://treeservicejonesboroar.net/blog/storm-tree-problems-northeast-arkansas</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/blog/storm-tree-problems-northeast-arkansas.html</loc>
-    <lastmod>2025-07-10</lastmod>
+    <loc>https://treeservicejonesboroar.net/blog/professional-tree-trimming-jonesboro-properties</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/blog/professional-tree-trimming-jonesboro-properties.html</loc>
-    <lastmod>2025-07-15</lastmod>
+    <loc>https://treeservicejonesboroar.net/blog/diy-tree-cutting-vs-hiring-arborist</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/blog/diy-tree-cutting-vs-hiring-arborist.html</loc>
-    <lastmod>2025-07-20</lastmod>
+    <loc>https://treeservicejonesboroar.net/blog/tree-falls-on-jonesboro-property</loc>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/blog/tree-falls-on-jonesboro-property.html</loc>
-    <lastmod>2025-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/blog/stump-grinding-safety-appearance</loc>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/blog/stump-grinding-safety-appearance.html</loc>
-    <lastmod>2025-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/blog/tree-care-older-homes-jonesboro</loc>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/blog/tree-care-older-homes-jonesboro.html</loc>
-    <lastmod>2025-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/blog/commercial-tree-maintenance-jonesboro-businesses</loc>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://treeservicejonesboroar.com/blog/commercial-tree-maintenance-jonesboro-businesses.html</loc>
-    <lastmod>2025-07-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://treeservicejonesboroar.com/blog/prepare-trees-severe-weather-arkansas.html</loc>
-    <lastmod>2025-07-26</lastmod>
+    <loc>https://treeservicejonesboroar.net/blog/prepare-trees-severe-weather-arkansas</loc>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
